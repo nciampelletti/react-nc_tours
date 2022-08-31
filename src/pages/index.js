@@ -4,5 +4,15 @@ import Tour from "./Tour"
 import Tours from "./Tours"
 import UserSettings from "./UserSettings"
 import UserTours from "./UserTours"
-
-export { AuthLogin, AuthSignup, Tour, Tours, UserSettings, UserTours }
+import ProtectedRoute from "./ProtectedRoute"
+import SharedLayout from "./SharedLayout"
+export {
+  AuthLogin,
+  AuthSignup,
+  Tour,
+  Tours,
+  UserSettings,
+  UserTours,
+  ProtectedRoute,
+  SharedLayout,
+}
