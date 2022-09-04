@@ -27,7 +27,8 @@ export default NavFooter
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 1rem;
 
   .link__descn {
     justify-self: end;
