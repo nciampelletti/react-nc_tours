@@ -1,5 +1,8 @@
-import LogoBlue from "./LogoBlue"
-import Navbar from "./Navbar"
-import NavIcon from "./NavIcon"
+import Header from "./Header"
+import Logo from "./Logo"
+import NavUsers from "./NavUsers"
+import Tour from "./Tour"
+import Tours from "./Tours"
+import Footer from "./Footer"
 
-export { LogoBlue, Navbar, NavIcon }
+export { Header, Logo, NavUsers, Tour, Tours, Footer }
