@@ -6,6 +6,7 @@ import { BsCalendarWeek, BsFlag, BsPeople } from "react-icons/bs"
 import { Link } from "react-router-dom"
 
 const Tour = ({
+  id,
   image,
   name,
   difficulty,
@@ -65,7 +66,7 @@ const Tour = ({
           <span className='card__footer-text'>rating ({ratingsQuantity})</span>
         </div>
         <div className='card__footer-button'>
-          <Link className='btn btn--blue' to={`/tours/${slug}`}>
+          <Link className='btn btn--blue' to={`/tours/${id}`}>
             Details
           </Link>
         </div>

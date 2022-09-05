@@ -1,3 +1,4 @@
 import Home from "./HomePage"
+import Tour from "./TourPage"
 
-export { Home }
+export { Home, Tour }

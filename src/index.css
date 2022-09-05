@@ -5,6 +5,8 @@ Variables
 */
 
 :root {
+  --section-rotate: 9vw;
+
   /* dark shades of primary color*/
   --clr-primary-1: hsl(22, 28%, 21%);
   --clr-primary-2: hsl(22, 28%, 29%);

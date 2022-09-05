@@ -1,1 +1,3 @@
-export const tours_url = "https://course-api.com/react-store-products"
+export const tours_url = "http://localhost:8000/api/v1/tours"
+
+export const single_tour_url = `http://localhost:8000/api/v1/tours/`

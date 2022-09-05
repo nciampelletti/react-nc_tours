@@ -1,4 +1,4 @@
-import tours_inFile from "../context/tours" //TODO: remove
+// import tours_inFile from "../context/tours" //TODO: remove
 import axios from "axios"
 import React, { useContext, useEffect, useReducer } from "react"
 import reducer from "../reducers/tours_reducer"
@@ -34,22 +34,23 @@ export const ToursProvider = ({ children }) => {
     dispatch({ type: GET_TOURS_BEGIN })
 
     try {
-      // const response = await axios.get(url)
-      //const tours = tours_inFile //response.data
-      dispatch({ type: GET_TOURS_SUCCESS, payload: tours_inFile })
+      const response = await axios.get(url)
+
+      const tours = response.data.data
+
+      dispatch({ type: GET_TOURS_SUCCESS, payload: tours })
     } catch (error) {
       dispatch({ type: GET_TOURS_ERROR })
     }
   }
 
   //const fetchSingleTour = async (url) => {
-  const fetchSingleTour = async (id) => {
+  const fetchSingleTour = async (url) => {
     dispatch({ type: GET_SINGLE_TOUR_BEGIN })
 
     try {
-      // const response = await axios.get(url)
-      // const product = response.data
-      const tour = tours_inFile.find((item) => item._id === id)
+      const response = await axios.get(url)
+      const tour = response.data.data
 
       dispatch({ type: GET_SINGLE_TOUR_SUCCESS, payload: tour })
     } catch (error) {

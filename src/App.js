@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { Home } from "./pages"
-import AuthWrapper from "./pages/AuthWrapper"
+import { Home, Tour } from "./pages"
 import { Footer, Header } from "./components"
 import styled from "styled-components"
 
@@ -11,6 +10,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/tours/:id' element={<Tour />} />
         </Routes>
         <Footer />
       </Router>
