@@ -34,6 +34,7 @@ const TourPage = () => {
     ratingsAverage,
     quides,
     summary,
+    images,
   } = tour
 
   useEffect(() => {
@@ -50,6 +51,7 @@ const TourPage = () => {
   //   return <Error />
   // }
 
+  console.log(images)
   return (
     <Wrapper>
       <TourHeader name={name} image={imageCover} />
@@ -67,7 +69,9 @@ const TourPage = () => {
         description={description}
         name={name}
       />
-      <TourPictures />
+      {images && images.length !== 0 && (
+        <TourPictures name={name} images={images} />
+      )}
       <TourMap />
       <TourReviews />
       <TourCta />

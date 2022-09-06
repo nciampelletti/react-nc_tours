@@ -54,6 +54,7 @@ const TourDescription = ({
               {quides.map((quide) => {
                 return (
                   <TourCardEntry
+                    key={quide._id}
                     icon={
                       <img
                         className='overview-box__img'
