@@ -5,6 +5,9 @@ import {
   GET_SINGLE_TOUR_BEGIN,
   GET_SINGLE_TOUR_SUCCESS,
   GET_SINGLE_TOUR_ERROR,
+  GET_SINGLE_TOUR_REVIEWS_BEGIN,
+  GET_SINGLE_TOUR_REVIEWS_SUCCESS,
+  GET_SINGLE_TOUR_REVIEWS_ERROR,
 } from "../actions"
 
 const tours_reducer = (state, action) => {
@@ -45,6 +48,30 @@ const tours_reducer = (state, action) => {
       ...state,
       single_tour_error: true,
       single_tour_loading: false,
+    }
+  }
+
+  if (action.type === GET_SINGLE_TOUR_REVIEWS_BEGIN) {
+    return {
+      ...state,
+      single_tour_reviews_loading: true,
+      single_tour_reviews_error: false,
+    }
+  }
+
+  if (action.type === GET_SINGLE_TOUR_REVIEWS_SUCCESS) {
+    return {
+      ...state,
+      single_tour_reviews: action.payload,
+      single_tour_reviews_loading: false,
+    }
+  }
+
+  if (action.type === GET_SINGLE_TOUR_REVIEWS_ERROR) {
+    return {
+      ...state,
+      single_tour_reviews_error: true,
+      single_tour_reviews_loading: false,
     }
   }
 

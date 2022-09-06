@@ -10,6 +10,8 @@ import TourPictures from "./TourPictures"
 import TourMap from "./TourMap"
 import TourReviews from "./TourReviews"
 import TourCta from "./TourCta"
+import Loading from "./Loading"
+import Error from "./Error"
 
 export {
   Header,
@@ -24,4 +26,6 @@ export {
   TourMap,
   TourReviews,
   TourCta,
+  Loading,
+  Error,
 }

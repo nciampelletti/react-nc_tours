@@ -11,6 +11,8 @@ import {
   TourMap,
   TourReviews,
   TourCta,
+  Loading,
+  Error,
 } from "../components/"
 
 const TourPage = () => {
@@ -19,7 +21,11 @@ const TourPage = () => {
     single_tour_loading: loading,
     single_tour_error: error,
     single_tour: tour,
+    single_tour_reviews: reviews,
+    single_tour_reviews_loading: loadingReviews,
+    single_tour_reviews_error: errorReviews,
     fetchSingleTour,
+    fetchSingleTourReviews,
   } = useToursContext()
 
   const {
@@ -42,14 +48,22 @@ const TourPage = () => {
     // eslint-disable-next-line
   }, [id])
 
-  // console.log(tour)
-  // if (loading) {
-  //   return <Loading />
-  // }
+  //export const single_tour_url = `http://localhost:8000/api/v1/tours/`
 
-  // if (error) {
-  //   return <Error />
-  // }
+  useEffect(() => {
+    console.log(`${url}${id}/reviews`)
+    fetchSingleTourReviews(`${url}${id}/reviews`)
+    // eslint-disable-next-line
+  }, [id])
+
+  // console.log(tour)
+  if (loading || loadingReviews) {
+    return <Loading />
+  }
+
+  if (error || errorReviews) {
+    return <Error />
+  }
 
   console.log(images)
   return (
@@ -72,8 +86,8 @@ const TourPage = () => {
       {images && images.length !== 0 && (
         <TourPictures name={name} images={images} />
       )}
-      <TourMap />
-      <TourReviews />
+      {/* <TourMap /> */}
+      <TourReviews reviews={reviews} />
       <TourCta />
     </Wrapper>
   )

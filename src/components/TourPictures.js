@@ -8,7 +8,6 @@ const TourPictures = ({ name, images }) => {
       {images &&
         images.length !== 0 &&
         images.map((image, key) => {
-          console.log(key, name, image, key + 1)
           return (
             <TourPictureItem key={key} name={name} image={image} count={key} />
           )

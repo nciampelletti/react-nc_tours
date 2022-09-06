@@ -276,6 +276,12 @@ p {
   z-index: 10;
 }
 
+.description__text {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--clr-grey-3);
+}
+
 .heading-tertirary {
   color: #fff;
   text-transform: uppercase;
@@ -314,7 +320,7 @@ p {
 
 .cd-span {
   color: var(--clr-grey-3);
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-right: 0.5rem;
 }
 

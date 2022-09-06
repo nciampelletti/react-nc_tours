@@ -10,6 +10,9 @@ import {
   GET_SINGLE_TOUR_BEGIN,
   GET_SINGLE_TOUR_SUCCESS,
   GET_SINGLE_TOUR_ERROR,
+  GET_SINGLE_TOUR_REVIEWS_BEGIN,
+  GET_SINGLE_TOUR_REVIEWS_SUCCESS,
+  GET_SINGLE_TOUR_REVIEWS_ERROR,
 } from "../actions"
 
 const initialState = {
@@ -19,6 +22,9 @@ const initialState = {
   single_tour_loading: false,
   single_tour_error: false,
   single_tour: {},
+  single_tour_reviews: [],
+  single_tour_reviews_loading: false,
+  single_tour_reviews_error: false,
 }
 
 const ToursContext = React.createContext()
@@ -44,7 +50,6 @@ export const ToursProvider = ({ children }) => {
     }
   }
 
-  //const fetchSingleTour = async (url) => {
   const fetchSingleTour = async (url) => {
     dispatch({ type: GET_SINGLE_TOUR_BEGIN })
 
@@ -58,8 +63,23 @@ export const ToursProvider = ({ children }) => {
     }
   }
 
+  const fetchSingleTourReviews = async (url) => {
+    dispatch({ type: GET_SINGLE_TOUR_REVIEWS_BEGIN })
+
+    try {
+      const response = await axios.get(url)
+      const tourReviews = response.data.data
+
+      dispatch({ type: GET_SINGLE_TOUR_REVIEWS_SUCCESS, payload: tourReviews })
+    } catch (error) {
+      dispatch({ type: GET_SINGLE_TOUR_REVIEWS_ERROR })
+    }
+  }
+
   return (
-    <ToursContext.Provider value={{ ...state, fetchSingleTour }}>
+    <ToursContext.Provider
+      value={{ ...state, fetchSingleTour, fetchSingleTourReviews }}
+    >
       {children}
     </ToursContext.Provider>
   )
