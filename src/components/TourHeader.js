@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { BsCalendarWeek, BsPinMapFill, BsClock } from "react-icons/bs"
 
-const TourHeader = ({ name, duration, location, image }) => {
+const TourHeader = ({ name, image }) => {
   return (
     <Wrapper>
       <div class='header__hero'>
@@ -19,7 +18,7 @@ const TourHeader = ({ name, duration, location, image }) => {
   )
 }
 
-export default TourHeader
+export default React.memo(TourHeader)
 
 const Wrapper = styled.div`
   position: relative;
@@ -73,17 +72,6 @@ const Wrapper = styled.div`
     color: #fff;
     text-transform: uppercase;
     font-weight: 300;
-  }
-
-  .heading-primary span {
-    padding: 0.5rem 1.2rem;
-    line-height: 1.25;
-    box-decoration-break: clone;
-    background-image: linear-gradient(
-      to bottom right,
-      var(--clr-grey-10),
-      var(--clr-blue-7)
-    );
   }
 
   @media screen and (max-width: 800px) {

@@ -265,3 +265,62 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
+
+.heading-tertirary {
+  font-size: 2.5rem;
+  text-align: right;
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  width: 80%;
+  z-index: 10;
+}
+
+.heading-tertirary {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.heading-tertirary span,
+.heading-primary span {
+  padding: 0.5rem 1.2rem;
+  line-height: 1.25;
+  box-decoration-break: clone;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--clr-grey-10),
+    var(--clr-blue-7)
+  );
+}
+
+.heading-secondary {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: -webkit-linear-gradient(var(--clr-blue-4), var(--clr-blue-8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.1rem;
+  line-height: 1.3;
+  display: inline-block;
+}
+
+.card__data {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.cd-span {
+  color: var(--clr-grey-3);
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.card__icon {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.7rem;
+  fill: var(--clr-blue-4);
+}

@@ -30,7 +30,7 @@ const Tour = ({
         </div>
 
         <h3 className='heading-tertirary'>
-          <span className='heading-tertirary-span'>{name}</span>
+          <span>{name}</span>
         </h3>
       </div>
       <div className='card__details'>
@@ -111,37 +111,9 @@ const Wrapper = styled.div`
   }
 
   .card__picture-img {
-    -o-object-fit: cover;
     object-fit: cover;
     height: 100%;
     width: 100%;
-  }
-
-  .heading-tertirary {
-    font-size: 2.5rem;
-    text-align: right;
-    position: absolute;
-    bottom: 1rem;
-    right: 2rem;
-    width: 80%;
-    z-index: 10;
-  }
-
-  .heading-tertirary {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 300;
-  }
-
-  .heading-tertirary-span {
-    padding: 0.5rem 1.2rem;
-    line-height: 1.25;
-    box-decoration-break: clone;
-    background-image: linear-gradient(
-      to bottom right,
-      var(--clr-grey-10),
-      var(--clr-blue-7)
-    );
   }
 
   .card__details {
@@ -164,23 +136,6 @@ const Wrapper = styled.div`
     color: var(--clr-grey-3);
     margin-top: -1rem;
     margin-bottom: 0.75rem;
-    font-size: 1rem;
-  }
-  .card__data {
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .card__icon {
-    height: 2rem;
-    width: 2rem;
-    margin-right: 0.3rem;
-    fill: var(--clr-blue-7);
-  }
-
-  .cd-span {
-    color: var(--clr-grey-3);
     font-size: 1rem;
   }
 

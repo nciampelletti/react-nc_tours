@@ -6,6 +6,10 @@ import Tours from "./Tours"
 import Footer from "./Footer"
 import TourHeader from "./TourHeader"
 import TourDescription from "./TourDescription"
+import TourPictures from "./TourPictures"
+import TourMap from "./TourMap"
+import TourReviews from "./TourReviews"
+import TourCta from "./TourCta"
 
 export {
   Header,
@@ -16,4 +20,8 @@ export {
   Footer,
   TourHeader,
   TourDescription,
+  TourPictures,
+  TourMap,
+  TourReviews,
+  TourCta,
 }

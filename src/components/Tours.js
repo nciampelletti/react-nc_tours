@@ -13,7 +13,7 @@ const Tours = () => {
   return (
     <Wrapper className='section'>
       <div className='title'>
-        <h3>our featured tours</h3>
+        <h3 className='heading-secondary'>our featured tours</h3>
         <div className='underline'></div>
       </div>
       <div className='section-center featured'>
