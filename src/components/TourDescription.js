@@ -91,7 +91,7 @@ const Wrapper = styled.div`
 
   padding: 0 8vw;
   padding-top: 14vw;
-  /* padding-bottom: calc(1vw + var(--section-rotate)); */
+  padding-bottom: calc(1vw + var(--section-rotate) + 10rem);
 
   .overview-box {
     background-color: red;
@@ -161,5 +161,14 @@ const Wrapper = styled.div`
   @media screen and (max-width: 800px) {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding-bottom: calc(1vw + var(--section-rotate) + 10rem);
+  }
+
+  .description-box .description {
+    margin-right: 5rem;
+  }
+
+  .description-box .description__text:not(:last-child) {
+    margin-bottom: 2rem;
   }
 `

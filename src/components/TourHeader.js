@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const TourHeader = ({ name, image }) => {
+const TourHeader = ({ name, image, duration, location }) => {
   return (
     <Wrapper>
       <div class='header__hero'>
@@ -12,13 +12,21 @@ const TourHeader = ({ name, image }) => {
         <h1 class='heading-primary'>
           <span>{name}</span>
         </h1>
+        <div class='heading-box__group'>
+          <div class='heading-box__detail'>
+            <span class='heading-box__text'>{duration} days</span>
+          </div>
+          <div class='heading-box__detail'>
+            <span class='heading-box__text'>{location}</span>
+          </div>
+        </div>
       </div>
       adasdas
     </Wrapper>
   )
 }
 
-export default React.memo(TourHeader)
+export default TourHeader
 
 const Wrapper = styled.div`
   position: relative;
@@ -53,12 +61,29 @@ const Wrapper = styled.div`
     object-position: 50% 25%;
   }
 
+  .heading-box__group {
+    color: #f7f7f7;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .heading-box {
     position: absolute;
     bottom: 13vw;
     left: 50%;
     top: 35%;
     transform: translate(-50%, -50%);
+  }
+
+  .heading-box__detail {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0.5rem 2rem rgb(0 0 0 / 15%);
   }
 
   .heading-primary {
@@ -74,9 +99,31 @@ const Wrapper = styled.div`
     font-weight: 300;
   }
 
+  .heading-box__detail {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0.5rem 2rem rgb(0 0 0 / 15%);
+  }
+
+  .heading-box__text {
+    margin-right: 2rem;
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 800px) {
+    .heading-box__group {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 800px) {
     .heading-primary {
       font-size: 2rem;
+    }
+    .heading-box__text {
+      font-size: 1rem;
     }
   }
 `

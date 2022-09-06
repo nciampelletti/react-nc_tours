@@ -41,6 +41,7 @@ const TourPage = () => {
     quides,
     summary,
     images,
+    startLocation,
   } = tour
 
   useEffect(() => {
@@ -65,10 +66,14 @@ const TourPage = () => {
     return <Error />
   }
 
-  console.log(images)
   return (
     <Wrapper>
-      <TourHeader name={name} image={imageCover} />
+      <TourHeader
+        name={name}
+        image={imageCover}
+        duration={duration}
+        location={startLocation.description}
+      />
       <TourDescription
         date={
           startDates && startDates.length !== 0
@@ -88,7 +93,7 @@ const TourPage = () => {
       )}
       {/* <TourMap /> */}
       <TourReviews reviews={reviews} />
-      <TourCta />
+      <TourCta images={images} />
     </Wrapper>
   )
 }

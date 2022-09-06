@@ -225,6 +225,7 @@ p {
 .btn:hover {
   color: var(--clr-grey-1);
   background: var(--clr-grey-9);
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 45%);
 }
 
 .btn--blue {
@@ -234,6 +235,7 @@ p {
     var(--clr-blue-7)
   );
   color: #fff;
+  box-shadow: 0 3.5rem 4rem rgb(0 0 0 / 45%);
 }
 
 .nav__el,
@@ -298,6 +300,7 @@ p {
     var(--clr-grey-10),
     var(--clr-blue-7)
   );
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 45%);
 }
 
 .heading-secondary {

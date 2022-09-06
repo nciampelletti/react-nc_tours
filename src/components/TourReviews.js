@@ -27,7 +27,7 @@ export default TourReviews
 
 const Wrapper = styled.section`
   margin-top: calc(0px - var(--section-rotate));
-  padding: calc(3rem + var(--section-rotate)) 0;
+  padding: calc(5rem + var(--section-rotate)) 0;
   position: relative;
   z-index: 1000;
   background: linear-gradient(

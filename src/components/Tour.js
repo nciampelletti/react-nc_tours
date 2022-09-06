@@ -80,13 +80,14 @@ export default Tour
 const Wrapper = styled.div`
   border-radius: 3px;
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); */
   background-color: #fff;
   transition: 0.3s all;
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 45%);
 
   .card__header {
     position: relative;
