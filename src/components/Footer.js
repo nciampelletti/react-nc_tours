@@ -11,7 +11,7 @@ const Footer = () => {
         <Logo logo={logo_blue} />
       </div>
       <NavFooter />
-      <p class='footer__copyright'>Created by Natalia Ciampelletti</p>
+      <p className='footer__copyright'>Created by Natalia Ciampelletti</p>
     </Wrapper>
   )
 }

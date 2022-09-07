@@ -4,24 +4,23 @@ import styled from "styled-components"
 const TourHeader = ({ name, image, duration, location }) => {
   return (
     <Wrapper>
-      <div class='header__hero'>
-        <div class='header__hero-overlay'> </div>
+      <div className='header__hero'>
+        <div className='header__hero-overlay'> </div>
         <img src={`/img/${image}`} alt={name} className='header__hero-img' />
       </div>
-      <div class='heading-box'>
-        <h1 class='heading-primary'>
+      <div className='heading-box'>
+        <h1 className='heading-primary'>
           <span>{name}</span>
         </h1>
-        <div class='heading-box__group'>
-          <div class='heading-box__detail'>
-            <span class='heading-box__text'>{duration} days</span>
+        <div className='heading-box__group'>
+          <div className='heading-box__detail'>
+            <span className='heading-box__text'>{duration} days</span>
           </div>
-          <div class='heading-box__detail'>
-            <span class='heading-box__text'>{location}</span>
+          <div className='heading-box__detail'>
+            <span className='heading-box__text'>{location}</span>
           </div>
         </div>
       </div>
-      adasdas
     </Wrapper>
   )
 }

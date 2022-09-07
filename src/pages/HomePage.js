@@ -3,6 +3,7 @@ import Tours from "../components/Tours"
 import styled from "styled-components"
 
 const HomePage = () => {
+  console.log("saasdasd")
   return (
     <Wrapper>
       <Tours />

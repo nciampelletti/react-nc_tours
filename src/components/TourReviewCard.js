@@ -6,7 +6,7 @@ import Stars from "./Stars"
 const TourReviewCard = ({ image, name, review, rating }) => {
   return (
     <Wrapper>
-      <div class='reviews__avatar'>
+      <div className='reviews__avatar'>
         <img
           className='reviews__avatar-img'
           src={!image ? defImage : `/img/${image}`}

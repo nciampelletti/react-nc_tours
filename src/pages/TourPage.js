@@ -22,10 +22,7 @@ const TourPage = () => {
     single_tour_error: error,
     single_tour: tour,
     single_tour_reviews: reviews,
-    single_tour_reviews_loading: loadingReviews,
-    single_tour_reviews_error: errorReviews,
-    fetchSingleTour,
-    fetchSingleTourReviews,
+    fetchSingleTourWithReviews,
   } = useToursContext()
 
   const {
@@ -45,25 +42,29 @@ const TourPage = () => {
   } = tour
 
   useEffect(() => {
-    fetchSingleTour(`${url}${id}`)
-    // eslint-disable-next-line
+    fetchSingleTourWithReviews(`${url}${id}`, `${url}${id}/reviews`)
   }, [id])
 
   //export const single_tour_url = `http://localhost:8000/api/v1/tours/`
 
-  useEffect(() => {
-    console.log(`${url}${id}/reviews`)
-    fetchSingleTourReviews(`${url}${id}/reviews`)
-    // eslint-disable-next-line
-  }, [id])
+  // useEffect(() => {
+  //   //console.log(`${url}${id}/reviews`)
+  //   fetchSingleTourReviews(`${url}${id}/reviews`)
+  //   // eslint-disable-next-line
+  // }, [id])
 
-  // console.log(tour)
-  if (loading || loadingReviews) {
+  if (loading) {
     return <Loading />
   }
 
-  if (error || errorReviews) {
+  if (error) {
     return <Error />
+  }
+
+  console.log(tour)
+
+  if (!tour) {
+    return null
   }
 
   return (
@@ -72,7 +73,11 @@ const TourPage = () => {
         name={name}
         image={imageCover}
         duration={duration}
-        location={startLocation.description}
+        location={
+          startLocation && startLocation.description
+            ? startLocation.description
+            : ""
+        }
       />
       <TourDescription
         date={
@@ -91,8 +96,16 @@ const TourPage = () => {
       {images && images.length !== 0 && (
         <TourPictures name={name} images={images} />
       )}
-      {/* <TourMap /> */}
-      <TourReviews reviews={reviews} />
+      {startLocation && startLocation.coordinates && (
+        <TourMap
+          startCoordinates={startLocation.coordinates}
+          startDescription={startLocation.description}
+          locations={locations}
+        />
+      )}
+
+      {reviews && <TourReviews reviews={reviews} />}
+
       <TourCta images={images} />
     </Wrapper>
   )

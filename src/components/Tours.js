@@ -8,8 +8,6 @@ import { formatDateShort } from "../utils/helpers"
 const Tours = () => {
   const { tours } = useToursContext()
 
-  console.log(tours)
-
   return (
     <Wrapper className='section'>
       <div className='title'>

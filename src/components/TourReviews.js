@@ -7,10 +7,11 @@ const TourReviews = ({ reviews }) => {
     <Wrapper>
       <div className='reviews'>
         {reviews.map((item) => {
-          const { user, name, review, rating } = item
+          const { _id, user, name, review, rating } = item
 
           return (
             <TourReviewCard
+              key={_id}
               image={user.photo}
               name={user.name}
               review={review}

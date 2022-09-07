@@ -1,17 +1,66 @@
-import React from "react"
+import * as React from "react"
+import Map, { Marker } from "react-map-gl"
 import styled from "styled-components"
+import { FaMapPin } from "react-icons/fa"
+import CustomMarker from "./CustomMarker"
 
-const TourMap = () => {
+// mapboxgl.accessToken = process.env.REACT_APP_MAPBOX
+
+const TourMap = ({ startCoordinates, startDescription, locations }) => {
+  const style = { color: "red", fontSize: "2.5em" }
+
   return (
-    <section class='section-map'>
-      {/* <div
-        id='map'
-        data-locations='[{"type":"Point","coordinates":[-80.128473,25.781842],"_id":"5c88fa8cf4afda39709c2959","description":"Lummus Park Beach","day":1},{"type":"Point","coordinates":[-80.647885,24.909047],"_id":"5c88fa8cf4afda39709c2958","description":"Islamorada","day":2},{"type":"Point","coordinates":[-81.0784,24.707496],"_id":"5c88fa8cf4afda39709c2957","description":"Sombrero Beach","day":3},{"type":"Point","coordinates":[-81.768719,24.552242],"_id":"5c88fa8cf4afda39709c2956","description":"West Key","day":5}]'
-      ></div> */}
-    </section>
+    <Wrapper>
+      <Map
+        initialViewState={{
+          longitude: startCoordinates[0],
+          latitude: startCoordinates[1],
+          zoom: 6,
+        }}
+        mapStyle='mapbox://styles/mapbox/light-v9'
+        mapboxAccessToken={process.env.REACT_APP_MAPBOX}
+      >
+        {locations.map((location, index) => {
+          const { coordinates: locCoord, description: locDescn } = location
+
+          if (locCoord && locCoord.length === 2) {
+            return (
+              <CustomMarker
+                key={`marker-${index}`}
+                longitude={locCoord[0]}
+                latitude={locCoord[1]}
+                description={locDescn}
+                color='secondary'
+              />
+            )
+          } else {
+            return null
+          }
+        })}
+
+        {startCoordinates && startCoordinates.length == 2 && (
+          <CustomMarker
+            longitude={startCoordinates[0]}
+            latitude={startCoordinates[1]}
+            description={startDescription}
+            color='primary'
+          />
+        )}
+      </Map>
+    </Wrapper>
   )
 }
 
 export default TourMap
 
-const Wrapper = styled.div``
+const Wrapper = styled.section`
+  position: relative;
+  height: 65rem;
+  margin-top: calc(0px - var(--section-rotate));
+
+  .map__icon {
+    color: "red";
+    font-size: "1.5rem";
+    font-weight: 600;
+  }
+`

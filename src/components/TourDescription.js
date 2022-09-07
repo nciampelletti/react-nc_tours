@@ -18,64 +18,62 @@ const TourDescription = ({
 
   return (
     <Wrapper>
-      <div classNameName='overview-box'>
-        <div>
-          <div className='overview-box__group'>
-            <h2 className='heading-secondary ma-bt-lg'>Tour information</h2>
+      <div className='overview-box'>
+        <div className='overview-box__group'>
+          <h2 className='heading-secondary ma-bt-lg'>Tour information</h2>
 
-            <TourCardEntry
-              icon={<BsCalendarWeek className='card__icon' />}
-              name='Next date:'
-              value={date}
-            />
+          <TourCardEntry
+            icon={<BsCalendarWeek className='card__icon' />}
+            name='Next date:'
+            value={date}
+          />
 
-            <TourCardEntry
-              icon={<GiStairsGoal className='card__icon' />}
-              name='Difficulty:'
-              value={difficulty}
-            />
+          <TourCardEntry
+            icon={<GiStairsGoal className='card__icon' />}
+            name='Difficulty:'
+            value={difficulty}
+          />
 
-            <TourCardEntry
-              icon={<BsPeople className='card__icon' />}
-              name='Participants:'
-              value={`${maxGroupSize} people`}
-            />
+          <TourCardEntry
+            icon={<BsPeople className='card__icon' />}
+            name='Participants:'
+            value={`${maxGroupSize} people`}
+          />
 
-            <TourCardEntry
-              icon={<BsStarFill className='card__icon' />}
-              name='Rating:'
-              value={`${ratingsAverage} / 5`}
-            />
-          </div>
-          {quides && quides.length !== 0 && (
-            <div className='overview-box__group'>
-              <h2 className='heading-secondary ma-bt-lg'>Your tour guides</h2>
-
-              {quides.map((quide) => {
-                return (
-                  <TourCardEntry
-                    key={quide._id}
-                    icon={
-                      <img
-                        className='overview-box__img'
-                        src={`/img/${quide.photo}`}
-                        alt={quide.name}
-                      />
-                    }
-                    name={quide.role}
-                    value={quide.name}
-                  />
-                )
-              })}
-            </div>
-          )}
+          <TourCardEntry
+            icon={<BsStarFill className='card__icon' />}
+            name='Rating:'
+            value={`${ratingsAverage} / 5`}
+          />
         </div>
+        {quides && quides.length !== 0 && (
+          <div className='overview-box__group'>
+            <h2 className='heading-secondary ma-bt-lg'>Your tour guides</h2>
+
+            {quides.map((quide) => {
+              return (
+                <TourCardEntry
+                  key={quide._id}
+                  icon={
+                    <img
+                      className='overview-box__img'
+                      src={`/img/${quide.photo}`}
+                      alt={quide.name}
+                    />
+                  }
+                  name={quide.role}
+                  value={quide.name}
+                />
+              )
+            })}
+          </div>
+        )}
       </div>
 
-      <div class='description-box'>
-        <h2 class='heading-secondary ma-bt-lg'>About {name}</h2>
-        <p class='description__text'>{summary}</p>
-        <p class='description__text'>{description}</p>
+      <div className='description-box'>
+        <h2 className='heading-secondary ma-bt-lg'>About {name}</h2>
+        <p className='description__text'>{summary}</p>
+        <p className='description__text'>{description}</p>
       </div>
     </Wrapper>
   )
@@ -93,11 +91,11 @@ const Wrapper = styled.div`
   padding-top: 14vw;
   padding-bottom: calc(1vw + var(--section-rotate) + 10rem);
 
-  .overview-box {
+  /* .overview-box {
     background-color: red;
     display: flex;
     justify-content: center;
-  }
+  } */
 
   .overview-box__group:not(:last-child) {
     margin-bottom: 3rem;

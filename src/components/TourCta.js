@@ -13,6 +13,7 @@ const TourCta = ({ images }) => {
               const count = key + 1
               return (
                 <img
+                  key={key}
                   className={`cta__img cta__img--${count}`}
                   src={`/img/${image}`}
                   alt='Tour picture'
