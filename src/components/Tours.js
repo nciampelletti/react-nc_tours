@@ -33,8 +33,6 @@ const Tours = () => {
             slug,
           } = tour
 
-          console.log(imageCover)
-
           return (
             <Tour
               id={_id}

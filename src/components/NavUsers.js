@@ -5,10 +5,10 @@ import { Link } from "react-router-dom"
 const NavUsers = () => {
   return (
     <Wrapper>
-      <Link to='/' className='nav__el'>
+      <Link to='/login' className='nav__el'>
         LOGIN
       </Link>
-      <Link to='/' className='nav__el nav__el--cta'>
+      <Link to='/signup' className='nav__el nav__el--cta'>
         Sign Up
       </Link>
     </Wrapper>

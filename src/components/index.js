@@ -12,6 +12,7 @@ import TourReviews from "./TourReviews"
 import TourCta from "./TourCta"
 import Loading from "./Loading"
 import Error from "./Error"
+import SideBar from "./SideBar"
 
 export {
   Header,
@@ -28,4 +29,5 @@ export {
   TourCta,
   Loading,
   Error,
+  SideBar,
 }
