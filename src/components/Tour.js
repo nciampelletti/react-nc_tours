@@ -120,9 +120,9 @@ const Wrapper = styled.div`
   .card__details {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-row-gap: 1.75rem;
-    grid-column-gap: 2rem;
-    padding: 2.5rem 1rem;
+    grid-row-gap: 1.2rem;
+    grid-column-gap: 1rem;
+    padding: 1rem 1rem;
   }
 
   h5 {
@@ -142,9 +142,9 @@ const Wrapper = styled.div`
 
   .card__footer {
     background-color: var(--clr-grey-10);
-    padding: 2.5rem 1rem;
+    padding: 1rem 1rem;
     border-top: 1px solid var(--clr-grey-9);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 1rem;

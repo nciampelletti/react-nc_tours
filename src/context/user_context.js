@@ -39,7 +39,7 @@ export const UserProvider = ({ children }) => {
         },
       })
     } catch (error) {
-      toast.error(error)
+      toast.error("Something went wrong. Try different email or password")
       dispatch({ type: ERROR_USER })
     }
   }

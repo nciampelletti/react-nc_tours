@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { useUserContext } from "../context/user_context"
+import Image from "../assets/default.jpg"
 
 const NavUsers = () => {
   const { user, logout } = useUserContext()
@@ -23,6 +24,13 @@ const NavUsers = () => {
           Sign Up
         </Link>
       )}
+
+      {user && (
+        <Link to='/userprofile' className='nav__el'>
+          <img class='nav__user-img' src={Image} alt='user' />
+          <span>{user.name}</span>
+        </Link>
+      )}
     </Wrapper>
   )
 }
@@ -35,6 +43,13 @@ const Wrapper = styled.div`
   justify-content: flex-end;
   align-items: center;
   gap: 1rem;
+
+  .nav__user-img {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
 
   .nav__el--cta {
     padding: 1rem 3rem;
