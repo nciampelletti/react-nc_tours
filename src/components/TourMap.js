@@ -26,23 +26,28 @@ const TourMap = ({ startCoordinates, startDescription, locations }) => {
           if (locCoord && locCoord.length === 2) {
             return (
               <CustomMarker
+                className='marker'
                 key={`marker-${index}`}
                 longitude={locCoord[0]}
                 latitude={locCoord[1]}
                 description={locDescn}
                 color='secondary'
-              />
+              >
+                <div className='marker temporary-marker'>
+                  <span></span>
+                </div>
+              </CustomMarker>
             )
           } else {
             return null
           }
         })}
 
-        {startCoordinates && startCoordinates.length == 2 && (
+        {startCoordinates && startCoordinates.length === 2 && (
           <CustomMarker
             longitude={startCoordinates[0]}
             latitude={startCoordinates[1]}
-            description={startDescription}
+            description={`Day1. ${startDescription}`}
             color='primary'
           />
         )}

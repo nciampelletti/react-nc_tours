@@ -1,21 +1,18 @@
 import React from "react"
-import styled from "styled-components"
 import { useState, useEffect } from "react"
+import styled from "styled-components"
 import { useUserContext } from "../context/user_context"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
 const initialState = {
-  name: "",
   email: "",
   password: "",
-  passwordConfirm: "",
 }
 
-const SignupForm = () => {
+const LoginForm = () => {
   const [values, setValues] = useState(initialState)
-  const { signup, user } = useUserContext()
-
+  const { login, user } = useUserContext()
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -36,42 +33,23 @@ const SignupForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const { email, password, name, passwordConfirm } = values
+    const { email, password } = values
 
-    if (!email || !password || !name || !passwordConfirm) {
+    if (!email || !password) {
       toast.error("Please Fill Out All Fields")
       return
     }
 
-    signup({
-      name: name,
-      email: email,
-      password: password,
-      passwordConfirm: passwordConfirm,
-    })
+    login({ email: email, password: password })
   }
 
   return (
     <Wrapper onSubmit={handleSubmit}>
       <div className='form__header_footer'>
-        <h3 className='heading-secondary'>create your account</h3>
+        <h3 className='heading-secondary'>login into your account</h3>
       </div>
       <div className='underline'></div>
       <form className='form form--signup'>
-        <div className='form__group'>
-          <label className='form__label' htmlFor='name'>
-            Your name
-          </label>
-          <input
-            id='name'
-            type='text'
-            name='name'
-            value={values.name}
-            onChange={handleChange}
-            className='form__input'
-            required
-          />
-        </div>
         <div className='form__group'>
           <label className='form__label' htmlFor='email'>
             Email address
@@ -102,31 +80,16 @@ const SignupForm = () => {
             required
           />
         </div>
-        <div className='form__group ma-bt-md'>
-          <label className='form__label' htmlFor='passwordConfirm'>
-            Confirm password
-          </label>
-          <input
-            id='passwordConfirm'
-            type='password'
-            name='passwordConfirm'
-            placeholder='••••••••'
-            value={values.passwordConfirm}
-            onChange={handleChange}
-            className='form__input'
-            required
-          />
-        </div>
 
         <div className='form__header_footer'>
-          <button className='btn btn--blue form__header_wide'> Sign up </button>
+          <button className='btn btn--blue form__header_wide'> Login </button>
         </div>
       </form>
     </Wrapper>
   )
 }
 
-export default SignupForm
+export default LoginForm
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -138,7 +101,7 @@ const Wrapper = styled.div`
 
   .form__header_footer {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   .form__header_wide {
     padding-right: 2rem;
@@ -161,7 +124,7 @@ const Wrapper = styled.div`
     font-family: inherit;
     font-size: 1.1rem;
     color: inherit;
-    padding: 1rem 1.75rem;
+    padding: 1.25rem 1.75rem;
     border: none;
     width: 100%;
     background-color: #fff;
@@ -174,7 +137,7 @@ const Wrapper = styled.div`
   }
 
   .form__group:not(:last-child) {
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
   }
 
   form {

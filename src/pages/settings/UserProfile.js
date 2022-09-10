@@ -1,8 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+import { useUserContext } from "../../context/user_context"
 
 const UserProfile = () => {
-  return <Wrapper className='section'>User Settings go here</Wrapper>
+  const { user } = useUserContext()
+
+  return <Wrapper className='section'>Hello {user.name}</Wrapper>
 }
 
 export default UserProfile

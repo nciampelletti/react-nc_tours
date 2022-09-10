@@ -1,12 +1,25 @@
 import React from "react"
 import { useToursContext } from "../context/tours_context"
 import Tour from "./Tour"
-
+import Loading from "./Loading"
+import Error from "./Error"
 import styled from "styled-components"
 import { formatDateShort } from "../utils/helpers"
 
 const Tours = () => {
-  const { tours } = useToursContext()
+  const {
+    tours,
+    tours_loading: loading,
+    tours_error: error,
+  } = useToursContext()
+
+  if (loading) {
+    return <Loading />
+  }
+
+  if (error) {
+    return <Error />
+  }
 
   return (
     <Wrapper className='section'>

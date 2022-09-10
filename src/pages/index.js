@@ -7,6 +7,8 @@ import SharedLayout from "./settings/SharedLayout"
 import UserBilling from "./settings/UserBilling"
 import UserBookings from "./settings/UserBookings"
 import UserReviews from "./settings/UserReviews"
+import Login from "./LoginPage"
+import PrivateRoute from "./PrivateRoute"
 
 export {
   Home,
@@ -18,4 +20,6 @@ export {
   UserBilling,
   UserBookings,
   UserReviews,
+  Login,
+  PrivateRoute,
 }

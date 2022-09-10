@@ -1,16 +1,28 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { useUserContext } from "../context/user_context"
 
 const NavUsers = () => {
+  const { user, logout } = useUserContext()
   return (
     <Wrapper>
-      <Link to='/login' className='nav__el'>
-        LOGIN
-      </Link>
-      <Link to='/signup' className='nav__el nav__el--cta'>
-        Sign Up
-      </Link>
+      {!user && (
+        <Link to='/login' className='nav__el'>
+          LOGIN
+        </Link>
+      )}
+      {user && (
+        <button type='button' className='nav__el' onClick={() => logout()}>
+          Logout
+        </button>
+      )}
+
+      {!user && (
+        <Link to='/signup' className='nav__el nav__el--cta'>
+          Sign Up
+        </Link>
+      )}
     </Wrapper>
   )
 }

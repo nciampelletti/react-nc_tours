@@ -9,9 +9,13 @@ import {
   UserBilling,
   UserBookings,
   UserReviews,
+  Login,
+  PrivateRoute,
 } from "./pages"
 import { Footer, Header } from "./components"
 import styled from "styled-components"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   return (
@@ -19,25 +23,27 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path='/landing' element={<Home />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/tours/:id' element={<Tour />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
           <Route
             path='/'
             element={
-              // <ProtectedRoute>
-              <SharedLayout />
-              // </ProtectedRoute>
+              <PrivateRoute>
+                <SharedLayout />
+              </PrivateRoute>
             }
           >
-            <Route index element={<UserProfile />} />
-            <Route path='/my-bookings' element={<UserBookings />} />
-            <Route path='/my-reviews' element={<UserReviews />} />
+            <Route path='/userprofile' element={<UserProfile />} />
+            <Route path='/bookings' element={<UserBookings />} />
+            <Route path='/reviews' element={<UserReviews />} />
             <Route path='/billing' element={<UserBilling />} />
           </Route>
-          <Route path='/tours/:id' element={<Tour />} />
-          <Route path='/signup' element={<Signup />} />
           <Route path='/*' element={<Error />} />
         </Routes>
         <Footer />
+        <ToastContainer position='top-center' />
       </Router>
     </Wrapper>
   )

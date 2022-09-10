@@ -20,14 +20,17 @@ export default Footer
 
 const Wrapper = styled.div`
   background-color: var(--clr-white);
-  padding: 2rem 4rem 2rem 4rem;
-
+  padding: 2rem 5rem;
+  height: 8rem;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  justify-content: space-between;
+  gap: 0.5rem;
   border-top: 1px solid var(--clr-grey-9);
-  color: var(--clr-grey-9);
 
   .footer__logo {
     grid-row: 1 / 3;

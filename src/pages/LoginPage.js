@@ -1,19 +1,19 @@
 import React from "react"
 import styled from "styled-components"
-import SignupForm from "../components/SignupForm"
+import LoginForm from "../components/LoginForm"
 
-const SignupPage = () => {
+const LoginPage = () => {
   return (
     <Wrapper className='section'>
-      <SignupForm />
+      <LoginForm />
     </Wrapper>
   )
 }
 
-export default SignupPage
+export default LoginPage
 
 const Wrapper = styled.div`
   background-color: var(--clr-grey-10);
-  padding: 0rem 0rem;
-  position: relative;
+  padding: 1rem 0rem;
+  //height: 100%;
 `

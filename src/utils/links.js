@@ -7,19 +7,19 @@ const links = [
   {
     id: 1,
     text: "settings",
-    path: "/",
+    path: "userprofile",
     icon: <FiSettings />,
   },
   {
     id: 2,
     text: "my bookings",
-    path: "my-bookings",
+    path: "bookings",
     icon: <FiBriefcase />,
   },
   {
     id: 3,
     text: "my reviews",
-    path: "my-reviews",
+    path: "reviews",
     icon: <FiStar />,
   },
   {
