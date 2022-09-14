@@ -1,9 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { useState, useEffect } from "react"
-import { useUserContext } from "../context/user_context"
+import { useUserContext } from "../../context/user_context"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
+import Button from "../ui/Button"
+import FormInput from "../ui/FormInput"
+import TextHeader from "../../components/layout/TextHeader"
 
 const initialState = {
   name: "",
@@ -22,7 +25,7 @@ const SignupForm = () => {
     if (user) {
       setTimeout(() => {
         navigate("/userprofile")
-      }, 3000)
+      }, 1000)
     }
   }, [user, navigate])
 
@@ -53,73 +56,49 @@ const SignupForm = () => {
 
   return (
     <Wrapper onSubmit={handleSubmit}>
-      <div className='form__header_footer'>
-        <h3 className='heading-secondary'>create your account</h3>
-      </div>
-      <div className='underline'></div>
+      <TextHeader centered='true' text='Create your account' />
       <form className='form form--signup'>
-        <div className='form__group'>
-          <label className='form__label' htmlFor='name'>
-            Your name
-          </label>
-          <input
-            id='name'
-            type='text'
-            name='name'
-            value={values.name}
-            onChange={handleChange}
-            className='form__input'
-            required
-          />
-        </div>
-        <div className='form__group'>
-          <label className='form__label' htmlFor='email'>
-            Email address
-          </label>
-          <input
-            id='email'
-            type='email'
-            name='email'
-            placeholder='you@example.com'
-            value={values.email}
-            onChange={handleChange}
-            className='form__input'
-            required
-          />
-        </div>
-        <div className='form__group ma-bt-md'>
-          <label className='form__label' htmlFor='password'>
-            Password
-          </label>
-          <input
-            id='password'
-            type='password'
-            name='password'
-            placeholder='••••••••'
-            value={values.password}
-            onChange={handleChange}
-            className='form__input'
-            required
-          />
-        </div>
-        <div className='form__group ma-bt-md'>
-          <label className='form__label' htmlFor='passwordConfirm'>
-            Confirm password
-          </label>
-          <input
-            id='passwordConfirm'
-            type='password'
-            name='passwordConfirm'
-            placeholder='••••••••'
-            value={values.passwordConfirm}
-            onChange={handleChange}
-            className='form__input'
-            required
-          />
-        </div>
+        <FormInput
+          type='text'
+          name='name'
+          label='Name'
+          placeholder='your name'
+          value={values.name}
+          required
+          handleChange={handleChange}
+        />
+        <FormInput
+          type='email'
+          name='email'
+          label='Email'
+          placeholder='you@example.com'
+          value={values.email}
+          required
+          handleChange={handleChange}
+        />
+
+        <FormInput
+          type='password'
+          name='password'
+          label='Password'
+          placeholder='••••••••'
+          value={values.password}
+          required
+          handleChange={handleChange}
+        />
+
+        <FormInput
+          type='password'
+          name='passwordConfirm'
+          label='Confirm password'
+          placeholder='••••••••'
+          value={values.passwordConfirm}
+          required
+          handleChange={handleChange}
+        />
 
         <div className='form__header_footer'>
-          <button className='btn btn--blue form__header_wide'> Sign up </button>
+          <Button>Sign up</Button>
         </div>
       </form>
     </Wrapper>

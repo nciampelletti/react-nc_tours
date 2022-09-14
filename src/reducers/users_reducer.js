@@ -1,8 +1,10 @@
+import { toast } from "react-toastify"
 import {
   LOGIN_USER_SUCCESS,
   SIGNUP_USER_SUCCESS,
   LOGOUT_USER_SUCCESS,
   ERROR_USER,
+  ME_UPDATE_SUCCESS,
 } from "../actions"
 import {
   addUserToLocalStorage,
@@ -17,6 +19,17 @@ const user_reducer = (state, action) => {
 
   if (action.type === SIGNUP_USER_SUCCESS) {
     addUserToLocalStorage(action.payload)
+    return {
+      ...state,
+      user: action.payload,
+      error: false,
+    }
+  }
+
+  //ME_UPDATE_SUCCESS
+  if (action.type === ME_UPDATE_SUCCESS) {
+    addUserToLocalStorage(action.payload)
+    toast.success("You have done it!")
     return {
       ...state,
       user: action.payload,

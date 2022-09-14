@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { useUserContext } from "../context/user_context"
-import Image from "../assets/default.jpg"
+import { useUserContext } from "../../context/user_context"
+import Image from "../../assets/default.jpg"
 
 const NavUsers = () => {
   const { user, logout } = useUserContext()
@@ -27,7 +27,7 @@ const NavUsers = () => {
 
       {user && (
         <Link to='/userprofile' className='nav__el'>
-          <img class='nav__user-img' src={Image} alt='user' />
+          <img className='nav__user-img' src={Image} alt='user' />
           <span>{user.name}</span>
         </Link>
       )}

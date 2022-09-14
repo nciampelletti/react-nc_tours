@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { single_tour_url as url } from "../utils/constants"
 import { useToursContext } from "../context/tours_context"
 import styled from "styled-components"
@@ -43,15 +43,8 @@ const TourPage = () => {
 
   useEffect(() => {
     fetchSingleTourWithReviews(`${url}${id}`, `${url}${id}/reviews`)
+    // eslint-disable-next-line
   }, [id])
-
-  //export const single_tour_url = `http://localhost:8000/api/v1/tours/`
-
-  // useEffect(() => {
-  //   //console.log(`${url}${id}/reviews`)
-  //   fetchSingleTourReviews(`${url}${id}/reviews`)
-  //   // eslint-disable-next-line
-  // }, [id])
 
   if (loading) {
     return <Loading />
@@ -60,8 +53,6 @@ const TourPage = () => {
   if (error) {
     return <Error />
   }
-
-  console.log(tour)
 
   if (!tour) {
     return null

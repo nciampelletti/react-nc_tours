@@ -3,7 +3,8 @@ import React from "react"
 import styled from "styled-components"
 import { GoLocation } from "react-icons/go"
 import { BsCalendarWeek, BsFlag, BsPeople } from "react-icons/bs"
-import { Link } from "react-router-dom"
+import TourCardEntry from "./ui/TourCardEntry"
+import Button from "./ui/Button"
 
 const Tour = ({
   id,
@@ -18,7 +19,7 @@ const Tour = ({
   locationdesc, //tour.startlocation.description
   startDate, //tour.startDates[0]
   maxGroupSize,
-  locationnum, //tour.locations.length
+  locations, //tour.locations.length
   slug,
 }) => {
   return (
@@ -38,37 +39,35 @@ const Tour = ({
           {difficulty} {duration}-day tour
         </h5>
         <p className='card__text'>{summary}</p>
-        <div className='card__data'>
-          <GoLocation className='card__icon' />
-          <span className='cd-span'> {locationdesc}</span>
-        </div>
-        <div className='card__data'>
-          <BsCalendarWeek className='card__icon' />
-          <span className='cd-span'> {startDate}</span>
-        </div>
-        <div className='card__data'>
-          <BsFlag className='card__icon' />
-          <span className='cd-span'> {locationnum} stops</span>
-        </div>
-        <div className='card__data'>
-          <BsPeople className='card__icon' />
-          <span className='cd-span'> {maxGroupSize} people</span>
-        </div>
+        <TourCardEntry
+          icon={<GoLocation className='card__icon' />}
+          value={locationdesc}
+        />
+
+        <TourCardEntry
+          icon={<BsCalendarWeek className='card__icon' />}
+          value={startDate}
+        />
+
+        <TourCardEntry
+          icon={<BsFlag className='card__icon' />}
+          value={`${locations} stops`}
+        />
+
+        <TourCardEntry
+          icon={<BsPeople className='card__icon' />}
+          value={`${maxGroupSize} people`}
+        />
       </div>
 
       <div className='card__footer'>
-        <div>
-          <span className='card__footer-value'>${price} </span>
-          <span className='card__footer-text'>per person</span>
-        </div>
-        <div>
-          <span className='card__footer-value'>{ratingsAverage} </span>
-          <span className='card__footer-text'>rating ({ratingsQuantity})</span>
-        </div>
+        <TourCardEntry name={`$${price}`} value={"per person"} />
+        <TourCardEntry
+          name={ratingsAverage}
+          value={`rating (${ratingsQuantity})`}
+        />
         <div className='card__footer-button'>
-          <Link className='btn btn--blue' to={`/tours/${id}`}>
-            Details
-          </Link>
+          <Button link={`/tours/${id}`}>Details</Button>
         </div>
       </div>
     </Wrapper>

@@ -1,25 +1,23 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+import Button from "./ui/Button"
 
 const TourCta = ({ images }) => {
   return (
     <Wrapper>
       <div className='cta'>
         <div className='cta__images'>
-          {images &&
-            images.length !== 0 &&
-            images.map((image, key) => {
-              const count = key + 1
-              return (
-                <img
-                  key={key}
-                  className={`cta__img cta__img--${count}`}
-                  src={`/img/${image}`}
-                  alt='Tour picture'
-                />
-              )
-            })}
+          {images?.map((image, key) => {
+            const count = key + 1
+            return (
+              <img
+                key={key}
+                className={`cta__img cta__img--${count}`}
+                src={`/img/${image}`}
+                alt=''
+              />
+            )
+          })}
         </div>
         <div className='cta__content'>
           <h2 className='heading-secondary'>
@@ -28,9 +26,7 @@ const TourCta = ({ images }) => {
           <p className='cta__text'>Best experience for life.</p>
         </div>
         <div className='cta__button'>
-          <Link className='btn btn--blue' to='/login'>
-            Login
-          </Link>
+          <Button link={`/login`}>Login</Button>
         </div>
       </div>
     </Wrapper>

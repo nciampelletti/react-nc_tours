@@ -1,7 +1,7 @@
 import * as React from "react"
-import Map, { Marker } from "react-map-gl"
+import { Marker } from "react-map-gl"
 import styled from "styled-components"
-import { FaMapPin } from "react-icons/fa"
+import { GoLocation } from "react-icons/go"
 
 const CustomMarker = ({ longitude, latitude, description, color }) => {
   return (
@@ -9,7 +9,7 @@ const CustomMarker = ({ longitude, latitude, description, color }) => {
       <Wrapper className='marker'>
         <span>
           <i>{description}</i>
-          <FaMapPin
+          <GoLocation
             style={
               color === "primary"
                 ? { color: "darkred", fontSize: "2.5em" }
@@ -49,9 +49,5 @@ const Wrapper = styled.div`
 
   .marker b {
     transform: rotateZ(135deg);
-  }
-
-  .temporary-marker span {
-    background: #d3d3d3;
   }
 `

@@ -6,8 +6,8 @@ const TourReviews = ({ reviews }) => {
   return (
     <Wrapper>
       <div className='reviews'>
-        {reviews.map((item) => {
-          const { _id, user, name, review, rating } = item
+        {reviews?.map((item) => {
+          const { _id, user, review, rating } = item
 
           return (
             <TourReviewCard

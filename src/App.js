@@ -5,17 +5,18 @@ import {
   Signup,
   Error,
   UserProfile,
-  SharedLayout,
   UserBilling,
   UserBookings,
   UserReviews,
   Login,
   PrivateRoute,
 } from "./pages"
-import { Footer, Header } from "./components"
+
+import { Footer, Header, SharedLayout } from "./components"
 import styled from "styled-components"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import PasswordReset from "./pages/settings/PasswordReset"
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             }
           >
             <Route path='/userprofile' element={<UserProfile />} />
+            <Route path='/passwordreset' element={<PasswordReset />} />
             <Route path='/bookings' element={<UserBookings />} />
             <Route path='/reviews' element={<UserReviews />} />
             <Route path='/billing' element={<UserBilling />} />

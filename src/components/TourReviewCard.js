@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import defImage from "../assets/default.jpg"
-import Stars from "./Stars"
+import Stars from "./ui/Stars"
 
 const TourReviewCard = ({ image, name, review, rating }) => {
   return (

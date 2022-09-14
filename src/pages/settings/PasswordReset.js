@@ -1,16 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import UserAccountDetails from "../../components/settings/UserAccountDetails"
+import UserPasswordReset from "../../components/settings/UserPasswordReset"
 
-const UserProfile = () => {
+const PasswordReset = () => {
   return (
     <Wrapper>
-      <UserAccountDetails />
+      <UserPasswordReset />
     </Wrapper>
   )
 }
 
-export default UserProfile
+export default PasswordReset
 
 const Wrapper = styled.div`
   margin: 2rem 2rem;

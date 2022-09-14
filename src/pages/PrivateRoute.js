@@ -7,10 +7,7 @@ const PrivateRoute = ({ children }) => {
   const { user } = useUserContext()
 
   if (!user) {
-    console.log("user", user)
     return <Navigate to='/' />
-  } else {
-    console.log("wow", user)
   }
 
   return children

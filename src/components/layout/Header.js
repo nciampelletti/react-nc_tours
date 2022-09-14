@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import Logo from "./Logo"
+import Logo from "../Logo"
 import NavUsers from "./NavUsers"
-import logo_white from "../assets/Logo_white.svg"
+import logo_white from "../../assets/Logo_white.svg"
 
 const Header = () => {
   return (

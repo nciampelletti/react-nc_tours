@@ -28,7 +28,7 @@ const Tours = () => {
         <div className='underline'></div>
       </div>
       <div className='section-center featured'>
-        {tours.map((tour) => {
+        {tours?.map((tour) => {
           const {
             _id,
             imageCover,

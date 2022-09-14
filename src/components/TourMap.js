@@ -1,14 +1,12 @@
 import * as React from "react"
-import Map, { Marker } from "react-map-gl"
+import Map from "react-map-gl"
 import styled from "styled-components"
-import { FaMapPin } from "react-icons/fa"
-import CustomMarker from "./CustomMarker"
+
+import CustomMarker from "./ui/CustomMarker"
 
 // mapboxgl.accessToken = process.env.REACT_APP_MAPBOX
 
 const TourMap = ({ startCoordinates, startDescription, locations }) => {
-  const style = { color: "red", fontSize: "2.5em" }
-
   return (
     <Wrapper>
       <Map

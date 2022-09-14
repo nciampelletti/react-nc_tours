@@ -5,13 +5,11 @@ import TourPictureItem from "./TourPictureItem"
 const TourPictures = ({ name, images }) => {
   return (
     <Wrapper>
-      {images &&
-        images.length !== 0 &&
-        images.map((image, key) => {
-          return (
-            <TourPictureItem key={key} name={name} image={image} count={key} />
-          )
-        })}
+      {images?.map((image, key) => {
+        return (
+          <TourPictureItem key={key} name={name} image={image} count={key} />
+        )
+      })}
     </Wrapper>
   )
 }

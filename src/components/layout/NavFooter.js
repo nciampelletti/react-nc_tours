@@ -1,23 +1,18 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { BsArrowUpLeftCircle } from "react-icons/bs"
+import links from "../../utils/footerlinks"
 
 const NavFooter = () => {
   return (
     <Wrapper>
-      <Link to='/' className='link__descn'>
-        About us
-      </Link>
-      <Link to='/' className='link__descn'>
-        Download apps
-      </Link>
-      <Link to='/' className='link__descn'>
-        Careers
-      </Link>
-      <Link to='/' className='link__descn'>
-        Contact
-      </Link>
+      {links.map((link) => {
+        return (
+          <Link key={link.id} to={link.to} className='link__descn'>
+            {link.text}
+          </Link>
+        )
+      })}
     </Wrapper>
   )
 }

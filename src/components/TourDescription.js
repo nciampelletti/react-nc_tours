@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { BsCalendarWeek, BsStarFill, BsPeople } from "react-icons/bs"
 import { GiStairsGoal } from "react-icons/gi"
-import TourCardEntry from "./TourCardEntry"
+import TourCardEntry from "./ui/TourCardEntry"
 
 const TourDescription = ({
   name,
@@ -14,8 +14,6 @@ const TourDescription = ({
   summary,
   description,
 }) => {
-  console.log(quides)
-
   return (
     <Wrapper>
       <div className='overview-box'>
@@ -50,7 +48,7 @@ const TourDescription = ({
           <div className='overview-box__group'>
             <h2 className='heading-secondary ma-bt-lg'>Your tour guides</h2>
 
-            {quides.map((quide) => {
+            {quides?.map((quide) => {
               return (
                 <TourCardEntry
                   key={quide._id}
