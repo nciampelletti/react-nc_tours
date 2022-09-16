@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import defImage from "../assets/default.jpg"
 import Stars from "./ui/Stars"
+import { image_user_url } from "../utils/constants"
 
 const TourReviewCard = ({ image, name, review, rating }) => {
   return (
@@ -9,7 +10,7 @@ const TourReviewCard = ({ image, name, review, rating }) => {
       <div className='reviews__avatar'>
         <img
           className='reviews__avatar-img'
-          src={!image ? defImage : `/img/${image}`}
+          src={!image ? defImage : `${image_user_url}${image}`}
           alt={name}
         />
         <h6 className='reviews__user'>{name}</h6>

@@ -2,10 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { useUserContext } from "../../context/user_context"
-import Image from "../../assets/default.jpg"
+import { image_user_url } from "../../utils/constants"
 
 const NavUsers = () => {
   const { user, logout } = useUserContext()
+
   return (
     <Wrapper>
       {!user && (
@@ -27,7 +28,11 @@ const NavUsers = () => {
 
       {user && (
         <Link to='/userprofile' className='nav__el'>
-          <img className='nav__user-img' src={Image} alt='user' />
+          <img
+            className='nav__user-img'
+            src={`${image_user_url}${user.photo}`}
+            alt='user'
+          />
           <span>{user.name}</span>
         </Link>
       )}

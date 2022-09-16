@@ -52,4 +52,16 @@ const Wrapper = styled.div`
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+  .form__input {
+    border: none;
+  }
+
+  .form__input:focus {
+    outline: none;
+  }
+
+  .form__input:focus-within {
+    border-bottom: 4px solid var(--clr-grey-6);
+  }
 `

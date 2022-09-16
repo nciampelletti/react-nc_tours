@@ -1,12 +1,17 @@
 import React from "react"
 import styled from "styled-components"
+import { image_tour_url } from "../utils/constants"
 
 const TourHeader = ({ name, image, duration, location }) => {
   return (
     <Wrapper>
       <div className='header__hero'>
         <div className='header__hero-overlay'> </div>
-        <img src={`/img/${image}`} alt={name} className='header__hero-img' />
+        <img
+          src={`${image_tour_url}${image}`}
+          alt={name}
+          className='header__hero-img'
+        />
       </div>
       <div className='heading-box'>
         <h1 className='heading-primary'>

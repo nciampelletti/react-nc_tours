@@ -3,10 +3,11 @@ import FormInput from "../ui/FormInput"
 import { useUserContext } from "../../context/user_context"
 import styled from "styled-components"
 import Button from "../ui/Button"
-import Image from "../../assets/default1.jpg"
+
 import ImagePicker from "../ui/ImagePicker"
 import { toast } from "react-toastify"
 import TextHeader from "../layout/TextHeader"
+import { image_user_url } from "../../utils/constants"
 
 const UserAccountDetails = () => {
   const { user, updateMe } = useUserContext()
@@ -21,9 +22,10 @@ const UserAccountDetails = () => {
     setMe({ ...me, [name]: value })
   }
 
-  const handleImageChange = (event) => {
-    //setState
-    console.log(event.target.files[0])
+  const fileSelectedHandler = (event) => {
+    let file = event.target.files[0]
+
+    setMe({ ...me, photo: file })
   }
 
   const handleSubmit = (e) => {
@@ -36,7 +38,7 @@ const UserAccountDetails = () => {
       return
     }
 
-    updateMe({ email: email, name: name })
+    updateMe(me)
   }
 
   return (
@@ -61,7 +63,14 @@ const UserAccountDetails = () => {
             handleChange={handleChange}
           />
 
-          <ImagePicker image={Image} handleChange={handleImageChange} />
+          <div className='image-picker'>
+            <img
+              className='form__user-photo'
+              src={`${image_user_url}${user.photo}`}
+              alt=''
+            />
+            <ImagePicker handleChange={fileSelectedHandler} />
+          </div>
 
           <div className='form__header_footer'>
             <Button>Save Changes</Button>
@@ -79,6 +88,21 @@ export default UserAccountDetails
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+
+  .image-picker {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .form__user-photo {
+    height: 5.5rem;
+    width: 5.5rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+  }
 
   form {
     display: block;

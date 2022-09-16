@@ -102,4 +102,8 @@ const Wrapper = styled.div`
     display: block;
     margin-top: 0em;
   }
+  .form__header_footer {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 `

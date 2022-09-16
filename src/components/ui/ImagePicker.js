@@ -2,10 +2,9 @@ import React from "react"
 import styled from "styled-components"
 
 const ImagePicker = (props) => {
-  const { image, handleChange } = props
+  const { handleChange } = props
   return (
     <Wrapper className='form__photo-upload'>
-      <img className='form__user-photo' src={image} alt='' />
       <input
         className='form__upload'
         type='file'

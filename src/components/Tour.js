@@ -5,7 +5,7 @@ import { GoLocation } from "react-icons/go"
 import { BsCalendarWeek, BsFlag, BsPeople } from "react-icons/bs"
 import TourCardEntry from "./ui/TourCardEntry"
 import Button from "./ui/Button"
-
+import { image_tour_url } from "../utils/constants"
 const Tour = ({
   id,
   image,
@@ -27,7 +27,11 @@ const Tour = ({
       <div className='card__header'>
         <div className='card__picture'>
           <div className='card__picture-overlay'> </div>
-          <img src={`/img/${image}`} alt={name} className='card__picture-img' />
+          <img
+            src={`${image_tour_url}${image}`}
+            alt={name}
+            className='card__picture-img'
+          />
         </div>
 
         <h3 className='heading-tertirary'>

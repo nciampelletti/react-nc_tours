@@ -1,22 +1,25 @@
 import React from "react"
 import styled from "styled-components"
+import { image_tour_url } from "../utils/constants"
 
 const TourPictureItem = ({ count, name, image }) => {
   const cssStyle = `picture-box__img picture-box__img--${count + 1}`
 
   return (
-    <Wrapper
-      className={cssStyle}
-      src={`/img/${image}`}
-      alt={name}
-      style={{ width: "100%" }}
-    />
+    <Wrapper>
+      <img
+        className={cssStyle}
+        src={`${image_tour_url}${image}`}
+        alt={name}
+        style={{ width: "100%" }}
+      />
+    </Wrapper>
   )
 }
 
 export default TourPictureItem
 
-const Wrapper = styled.img`
+const Wrapper = styled.div`
   .picture-box__img {
     display: block;
     width: 100%;

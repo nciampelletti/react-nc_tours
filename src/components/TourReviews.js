@@ -12,8 +12,8 @@ const TourReviews = ({ reviews }) => {
           return (
             <TourReviewCard
               key={_id}
-              image={user.photo}
-              name={user.name}
+              image={user?.photo}
+              name={user?.name}
               review={review}
               rating={rating}
             />

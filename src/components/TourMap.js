@@ -13,7 +13,7 @@ const TourMap = ({ startCoordinates, startDescription, locations }) => {
         initialViewState={{
           longitude: startCoordinates[0],
           latitude: startCoordinates[1],
-          zoom: 6,
+          zoom: 10,
         }}
         mapStyle='mapbox://styles/mapbox/light-v9'
         mapboxAccessToken={process.env.REACT_APP_MAPBOX}

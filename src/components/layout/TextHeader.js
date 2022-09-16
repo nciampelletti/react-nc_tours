@@ -47,7 +47,7 @@ const Wrapper = styled.div`
   }
 
   .heading-secondary {
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.5rem;
     text-align: center;
   }
 `

@@ -40,6 +40,7 @@ export const UserProvider = ({ children }) => {
         payload: {
           name: response.data.data.user.name,
           email: response.data.data.user.email,
+          photo: response.data.data.user.photo,
           token: response.data.token,
         },
       })
@@ -50,19 +51,30 @@ export const UserProvider = ({ children }) => {
   }
 
   //updateMe
-  const updateMe = async ({ email, name }) => {
+  const updateMe = async ({ name, email, token, photo }) => {
     try {
-      const response = await axios.patch(
-        `${url}/updateMe`,
-        { email, name },
-        { withCredentials: true }
-      )
+      let formData = new FormData()
+
+      formData.append("photo", photo)
+      formData.append("email", email)
+      formData.append("name", name)
+
+      console.log(photo, email, name)
+
+      const response = await axios({
+        method: "patch",
+        url: `${url}/updateMe`,
+        data: formData,
+        headers: { "Content-Type": "multipart/form-data" },
+        withCredentials: true,
+      })
 
       dispatch({
         type: ME_UPDATE_SUCCESS,
         payload: {
           name: response.data.data.user.name,
           email: response.data.data.user.email,
+          photo: response.data.data.user.photo,
           token: response.data.token,
         },
       })
@@ -90,6 +102,7 @@ export const UserProvider = ({ children }) => {
         payload: {
           name: response.data.data.user.name,
           email: response.data.data.user.email,
+          photo: response.data.data.user.photo,
           token: response.data.token,
         },
       })
@@ -113,6 +126,7 @@ export const UserProvider = ({ children }) => {
         payload: {
           name: response.data.data.user.name,
           email: response.data.data.user.email,
+          photo: response.data.data.user.photo,
           token: response.data.token,
         },
       })

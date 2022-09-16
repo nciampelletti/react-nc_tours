@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { BsCalendarWeek, BsStarFill, BsPeople } from "react-icons/bs"
 import { GiStairsGoal } from "react-icons/gi"
 import TourCardEntry from "./ui/TourCardEntry"
+import { image_user_url } from "../utils/constants"
 
 const TourDescription = ({
   name,
@@ -55,7 +56,7 @@ const TourDescription = ({
                   icon={
                     <img
                       className='overview-box__img'
-                      src={`/img/${quide.photo}`}
+                      src={`${image_user_url}${quide.photo}`}
                       alt={quide.name}
                     />
                   }

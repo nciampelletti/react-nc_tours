@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Button from "./ui/Button"
+import { image_tour_url } from "../utils/constants"
 
 const TourCta = ({ images }) => {
   return (
@@ -13,7 +14,7 @@ const TourCta = ({ images }) => {
               <img
                 key={key}
                 className={`cta__img cta__img--${count}`}
-                src={`/img/${image}`}
+                src={`${image_tour_url}${image}`}
                 alt=''
               />
             )
