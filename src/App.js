@@ -10,6 +10,7 @@ import {
   UserReviews,
   Login,
   PrivateRoute,
+  CheckoutSuccess,
 } from "./pages"
 
 import { Footer, Header, SharedLayout } from "./components"
@@ -41,6 +42,7 @@ function App() {
             <Route path='/bookings' element={<UserBookings />} />
             <Route path='/reviews' element={<UserReviews />} />
             <Route path='/billing' element={<UserBilling />} />
+            <Route path='/checkout-success' element={<CheckoutSuccess />} />
           </Route>
           <Route path='/*' element={<Error />} />
         </Routes>

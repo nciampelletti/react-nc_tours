@@ -97,7 +97,7 @@ const TourPage = () => {
 
       {reviews && <TourReviews reviews={reviews} />}
 
-      <TourCta images={images} />
+      <TourCta id={id} images={images} />
     </Wrapper>
   )
 }

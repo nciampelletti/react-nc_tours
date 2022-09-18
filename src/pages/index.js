@@ -8,7 +8,7 @@ import UserProfile from "./settings/UserProfile"
 import UserBilling from "./settings/UserBilling"
 import UserBookings from "./settings/UserBookings"
 import UserReviews from "./settings/UserReviews"
-
+import CheckoutSuccess from "./CheckoutSuccessPage"
 export {
   Home,
   Tour,
@@ -20,4 +20,5 @@ export {
   UserReviews,
   Login,
   PrivateRoute,
+  CheckoutSuccess,
 }

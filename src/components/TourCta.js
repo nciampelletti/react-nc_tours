@@ -2,8 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import Button from "./ui/Button"
 import { image_tour_url } from "../utils/constants"
+import { useUserContext } from "../context/user_context"
+import PayButton from "./ui/PayButton"
+const TourCta = ({ id, images }) => {
+  const { user } = useUserContext()
 
-const TourCta = ({ images }) => {
   return (
     <Wrapper>
       <div className='cta'>
@@ -27,7 +30,11 @@ const TourCta = ({ images }) => {
           <p className='cta__text'>Best experience for life.</p>
         </div>
         <div className='cta__button'>
-          <Button link={`/login`}>Login</Button>
+          {user ? (
+            <PayButton id={id}>Book it</PayButton>
+          ) : (
+            <Button link={`/login`}>Login</Button>
+          )}
         </div>
       </div>
     </Wrapper>
