@@ -2,7 +2,7 @@
 import axios from "axios"
 import React, { useContext, useReducer } from "react"
 import reducer from "../reducers/users_reducer"
-import { users_url as url } from "../utils/constants"
+// import { users_url as url } from "../utils/constants"
 import {
   LOGIN_USER_SUCCESS,
   SIGNUP_USER_SUCCESS,
@@ -30,7 +30,8 @@ export const UserProvider = ({ children }) => {
   const login = async ({ email, password }) => {
     try {
       const response = await axios.post(
-        `${url}/login`,
+        // `${url}/login`,
+        "/api/v1/users/login",
         { email, password },
         { withCredentials: true }
       )
@@ -63,7 +64,7 @@ export const UserProvider = ({ children }) => {
 
       const response = await axios({
         method: "patch",
-        url: `${url}/updateMe`,
+        url: `/api/v1/users/updateMe`,
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
@@ -92,7 +93,7 @@ export const UserProvider = ({ children }) => {
   }) => {
     try {
       const response = await axios.patch(
-        `${url}/updateMyPassword`,
+        `/api/v1/users/updateMyPassword`,
         { passwordCurrent, password, passwordConfirm },
         { withCredentials: true }
       )
@@ -114,7 +115,7 @@ export const UserProvider = ({ children }) => {
 
   const signup = async ({ name, email, password, passwordConfirm }) => {
     try {
-      const response = await axios.post(`${url}/signup`, {
+      const response = await axios.post(`/api/v1/users/signup`, {
         name,
         email,
         password,

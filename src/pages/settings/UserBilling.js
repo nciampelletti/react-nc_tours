@@ -1,8 +1,13 @@
 import React from "react"
 import styled from "styled-components"
+import DemoSticker from "../../components/DemoSticker"
 
 const UserBilling = () => {
-  return <Wrapper>User Billing</Wrapper>
+  return (
+    <Wrapper>
+      <DemoSticker name='User Billing' />
+    </Wrapper>
+  )
 }
 
 export default UserBilling

@@ -2,7 +2,7 @@
 import axios from "axios"
 import React, { useContext, useEffect, useReducer } from "react"
 import reducer from "../reducers/tours_reducer"
-import { tours_url as url } from "../utils/constants"
+// import { tours_url as url } from "../utils/constants"
 import {
   GET_TOURS_BEGIN,
   GET_TOURS_SUCCESS,
@@ -28,14 +28,14 @@ export const ToursProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    fecthTours(`${url}`)
+    fecthTours(`/api/v1/tours`)
   }, [])
 
   const fecthTours = async (url) => {
     dispatch({ type: GET_TOURS_BEGIN })
 
     try {
-      const response = await axios.get(url)
+      const response = await axios.get("/api/v1/tours")
 
       const tours = response.data.data
 

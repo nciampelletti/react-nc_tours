@@ -1,15 +1,13 @@
 import axios from "axios"
-import { useNavigate } from "react-router-dom"
-import { booking_url as url } from "../../utils/constants"
+
+// import { booking_url as url } from "../../utils/constants"
 import styled from "styled-components"
 
 const PayButton = ({ id }) => {
-  const navigate = useNavigate()
-
   //`${url}${id}`
   const handleOnClick = () => {
     axios
-      .get(`${url}${id}`, { withCredentials: true })
+      .get(`/api/v1/booking/${id}`, { withCredentials: true })
       .then((res) => {
         const ses_url = res.data.session.url
         console.log(ses_url)

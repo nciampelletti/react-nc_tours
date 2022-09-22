@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { single_tour_url as url } from "../utils/constants"
+import { tours_url as url } from "../utils/constants"
 import { useToursContext } from "../context/tours_context"
 import styled from "styled-components"
 import { formatDateShort } from "../utils/helpers"
@@ -42,7 +42,11 @@ const TourPage = () => {
   } = tour
 
   useEffect(() => {
-    fetchSingleTourWithReviews(`${url}${id}`, `${url}${id}/reviews`)
+    //fetchSingleTourWithReviews(`${url}/${id}`, `${url}/${id}/reviews`)
+    fetchSingleTourWithReviews(
+      `/api/v1/tours/${id}`,
+      `/api/v1/tours/${id}/reviews`
+    )
     // eslint-disable-next-line
   }, [id])
 
