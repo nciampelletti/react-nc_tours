@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import UserAccountDetails from "../../components/settings/UserAccountDetails"
+import UserAccountDetails from "./UserAccountDetails"
 
 const UserProfile = () => {
   return (

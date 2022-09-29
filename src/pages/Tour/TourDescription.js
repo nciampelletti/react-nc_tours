@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { BsCalendarWeek, BsStarFill, BsPeople } from "react-icons/bs"
 import { GiStairsGoal } from "react-icons/gi"
-import TourCardEntry from "./ui/TourCardEntry"
-import { image_user_url } from "../utils/constants"
+import TourCardEntry from "../../components/ui/TourCardEntry"
+import { image_user_url } from "../../utils/constants"
 
 const TourDescription = ({
   name,

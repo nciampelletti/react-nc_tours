@@ -1,14 +1,15 @@
-import Home from "./HomePage"
-import Tour from "./TourPage"
-import Error from "./ErrorPage"
-import Signup from "./SignupPage"
-import Login from "./LoginPage"
-import PrivateRoute from "./PrivateRoute"
-import UserProfile from "./settings/UserProfile"
-import UserBilling from "./settings/UserBilling"
-import UserBookings from "./settings/UserBookings"
-import UserReviews from "./settings/UserReviews"
-import CheckoutSuccess from "./CheckoutSuccessPage"
+import Home from "./Tours/HomePage"
+import Tour from "./Tour/TourPage"
+import Error from "./Error/ErrorPage"
+import Signup from "./Auth/SignupPage"
+import Login from "./Auth/LoginPage"
+import PrivateRoute from "./Auth/PrivateRoute"
+import UserProfile from "./Settings/UserProfile"
+import UserBilling from "./Settings/UserBilling"
+import UserBookings from "./Settings/UserBookings"
+import UserReviews from "./Settings/UserReviews"
+import CheckoutSuccess from "./Auth/CheckoutSuccessPage"
+
 export {
   Home,
   Tour,

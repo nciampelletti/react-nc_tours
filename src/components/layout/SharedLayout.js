@@ -2,7 +2,7 @@ import React from "react"
 
 import { Outlet } from "react-router-dom"
 import styled from "styled-components"
-import { SideBar } from ".."
+import { SideBar } from "."
 
 const SharedLayout = () => {
   return (

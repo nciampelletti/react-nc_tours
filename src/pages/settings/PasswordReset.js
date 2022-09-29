@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import UserPasswordReset from "../../components/settings/UserPasswordReset"
+import UserPasswordReset from "./UserPasswordReset"
 
 const PasswordReset = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import defImage from "../assets/default.jpg"
-import Stars from "./ui/Stars"
-import { image_user_url } from "../utils/constants"
+import defImage from "../../assets/default.jpg"
+import Stars from "../../components/ui/Stars"
+import { image_user_url } from "../../utils/constants"
 
 const TourReviewCard = ({ image, name, review, rating }) => {
   return (

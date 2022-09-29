@@ -2,7 +2,7 @@ import * as React from "react"
 import Map from "react-map-gl"
 import styled from "styled-components"
 
-import CustomMarker from "./ui/CustomMarker"
+import CustomMarker from "../../components/ui/CustomMarker"
 
 // mapboxgl.accessToken = process.env.REACT_APP_MAPBOX
 

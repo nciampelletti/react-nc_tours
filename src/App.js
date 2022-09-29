@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import {
   Home,
   Tour,
-  Signup,
   Error,
+  Signup,
   UserProfile,
   UserBilling,
   UserBookings,
@@ -13,11 +13,11 @@ import {
   CheckoutSuccess,
 } from "./pages"
 
-import { Footer, Header, SharedLayout } from "./components"
+import { Footer, Header, SharedLayout } from "./components/layout"
 import styled from "styled-components"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import PasswordReset from "./pages/settings/PasswordReset"
+import PasswordReset from "./pages/Settings/PasswordReset"
 
 function App() {
   return (

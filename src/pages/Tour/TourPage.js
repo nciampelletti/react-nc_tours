@@ -1,9 +1,10 @@
 import React, { useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { tours_url as url } from "../utils/constants"
-import { useToursContext } from "../context/tours_context"
+// import { tours_url as url } from "../../utils/constants"
+import { useToursContext } from "../../context/tours_context"
 import styled from "styled-components"
-import { formatDateShort } from "../utils/helpers"
+import { formatDateShort } from "../../utils/helpers"
+
 import {
   TourDescription,
   TourHeader,
@@ -11,9 +12,9 @@ import {
   TourMap,
   TourReviews,
   TourCta,
-  Loading,
-  Error,
-} from "../components/"
+} from "."
+
+import { Error, Loading } from "../../components/ui/"
 
 const TourPage = () => {
   const { id } = useParams()

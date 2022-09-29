@@ -1,10 +1,9 @@
 import React, { useState } from "react"
-import FormInput from "../ui/FormInput"
 import { useUserContext } from "../../context/user_context"
 import styled from "styled-components"
-import Button from "../ui/Button"
+import { Button, FormInput } from "../../components/ui"
 import { toast } from "react-toastify"
-import TextHeader from "../layout/TextHeader"
+import { TextHeader } from "../../components/layout"
 
 const initialState = {
   passwordCurrent: "",

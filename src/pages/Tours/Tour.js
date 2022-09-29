@@ -3,9 +3,10 @@ import React from "react"
 import styled from "styled-components"
 import { GoLocation } from "react-icons/go"
 import { BsCalendarWeek, BsFlag, BsPeople } from "react-icons/bs"
-import TourCardEntry from "./ui/TourCardEntry"
-import Button from "./ui/Button"
-import { image_tour_url } from "../utils/constants"
+import TourCardEntry from "../../components/ui/TourCardEntry"
+import Button from "../../components/ui/Button"
+import { image_tour_url } from "../../utils/constants"
+
 const Tour = ({
   id,
   image,

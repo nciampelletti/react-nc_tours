@@ -1,9 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "./ui/Button"
-import { image_tour_url } from "../utils/constants"
-import { useUserContext } from "../context/user_context"
-import PayButton from "./ui/PayButton"
+import Button from "../../components/ui/Button"
+import { image_tour_url } from "../../utils/constants"
+import { useUserContext } from "../../context/user_context"
+import PayButton from "../../components/ui/PayButton"
+
 const TourCta = ({ id, images }) => {
   const { user } = useUserContext()
 

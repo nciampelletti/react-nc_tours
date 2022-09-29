@@ -1,5 +1,5 @@
 import React from "react"
-import Tours from "../components/Tours"
+import Tours from "./Tours"
 import styled from "styled-components"
 
 const HomePage = () => {

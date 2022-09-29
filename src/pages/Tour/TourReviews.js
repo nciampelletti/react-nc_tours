@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import TourReviewCard from "./TourReviewCard"
+import { TourReviewCard } from "."
 
 const TourReviews = ({ reviews }) => {
   return (

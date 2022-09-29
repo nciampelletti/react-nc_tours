@@ -1,10 +1,10 @@
 import React from "react"
-import { useToursContext } from "../context/tours_context"
+import { useToursContext } from "../../context/tours_context"
 import Tour from "./Tour"
-import Loading from "./Loading"
-import Error from "./Error"
+import Loading from "../../components/ui/Loading"
+import Error from "../../components/ui/Error"
 import styled from "styled-components"
-import { formatDateShort } from "../utils/helpers"
+import { formatDateShort } from "../../utils/helpers"
 
 const Tours = () => {
   const {

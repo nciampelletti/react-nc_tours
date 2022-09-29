@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import TourPictureItem from "./TourPictureItem"
+import { TourPictureItem } from "."
+
 //name, image, count
 const TourPictures = ({ name, images }) => {
   return (

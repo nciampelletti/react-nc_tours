@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { image_tour_url } from "../utils/constants"
+import { image_tour_url } from "../../utils/constants"
 
 const TourPictureItem = ({ count, name, image }) => {
   const cssStyle = `picture-box__img picture-box__img--${count + 1}`

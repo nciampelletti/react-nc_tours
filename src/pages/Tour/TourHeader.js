@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { image_tour_url } from "../utils/constants"
+import { image_tour_url } from "../../utils/constants"
 
 const TourHeader = ({ name, image, duration, location }) => {
   return (

@@ -1,12 +1,12 @@
 import React, { useState } from "react"
-import FormInput from "../ui/FormInput"
+import FormInput from "../../components/ui/FormInput"
 import { useUserContext } from "../../context/user_context"
 import styled from "styled-components"
-import Button from "../ui/Button"
+import Button from "../../components/ui/Button"
 
-import ImagePicker from "../ui/ImagePicker"
+import ImagePicker from "../../components/ui/ImagePicker"
 import { toast } from "react-toastify"
-import TextHeader from "../layout/TextHeader"
+import TextHeader from "../../components/layout/TextHeader"
 import { image_user_url } from "../../utils/constants"
 
 const UserAccountDetails = () => {

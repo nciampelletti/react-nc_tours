@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import LoginForm from "../components/authentification/LoginForm"
+import LoginForm from "./LoginForm"
 
 const LoginPage = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react"
 import logo_blue from "../../assets/Logo_blue.svg"
-import Logo from "../Logo"
+import Logo from "./Logo"
 import styled from "styled-components"
 import NavFooter from "./NavFooter"
 
