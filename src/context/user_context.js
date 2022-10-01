@@ -66,7 +66,7 @@ export const UserProvider = ({ children }) => {
         url: `https://ciampelletti-tours.herokuapp.com/api/v1/users/updateMe`,
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },
-        withCredentials: true,
+        // withCredentials: true,
       })
 
       dispatch({
