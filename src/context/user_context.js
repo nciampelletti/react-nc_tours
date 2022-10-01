@@ -122,7 +122,8 @@ export const UserProvider = ({ children }) => {
           email,
           password,
           passwordConfirm,
-        }
+        },
+        { withCredentials: true }
       )
 
       dispatch({
