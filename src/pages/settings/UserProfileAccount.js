@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import UserAccountDetails from "./UserAccountDetails"
 
-const UserProfile = () => {
+const UserProfileAccount = () => {
   return (
     <Wrapper>
       <UserAccountDetails />
@@ -10,7 +10,7 @@ const UserProfile = () => {
   )
 }
 
-export default UserProfile
+export default UserProfileAccount
 
 const Wrapper = styled.div`
   margin: 2rem 2rem;

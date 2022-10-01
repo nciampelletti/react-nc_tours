@@ -4,7 +4,7 @@ import {
   Tour,
   Error,
   Signup,
-  UserProfile,
+  UserProfileAccount,
   UserProfilePWDReset,
   UserBilling,
   UserBookings,
@@ -37,7 +37,7 @@ function App() {
               </PrivateRoute>
             }
           >
-            {/* <Route path='/userprofile' element={<UserProfile />} /> */}
+            <Route path='/userprofile' element={<UserProfileAccount />} />
             <Route path='/passwordreset' element={<UserProfilePWDReset />} />
             <Route path='/bookings' element={<UserBookings />} />
             <Route path='/reviews' element={<UserReviews />} />
