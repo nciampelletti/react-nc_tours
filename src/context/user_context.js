@@ -89,7 +89,7 @@ export const UserProvider = ({ children }) => {
 
       const response = await axiosClient.patch(
         // `${url}/login`,
-        "/users/login",
+        "/users/updateMe",
         formData
       )
 
