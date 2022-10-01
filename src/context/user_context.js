@@ -32,8 +32,7 @@ export const UserProvider = ({ children }) => {
       const response = await axios.post(
         // `${url}/login`,
         "https://ciampelletti-tours.herokuapp.com/api/v1/users/login",
-        { email, password },
-        { withCredentials: true }
+        { email, password }
       )
 
       dispatch({
