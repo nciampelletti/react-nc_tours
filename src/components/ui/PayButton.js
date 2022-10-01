@@ -6,11 +6,15 @@ import styled from "styled-components"
 const PayButton = ({ id }) => {
   //`${url}${id}`
   const handleOnClick = () => {
+    console.log("we are booking ...")
     axios
-      .get(`/api/v1/booking/${id}`, { withCredentials: true })
+      .get(`https://ciampelletti-tours.herokuapp.com/api/v1/booking/${id}`, {
+        withCredentials: true,
+      })
       .then((res) => {
+        console.log("success")
         const ses_url = res.data.session.url
-        console.log(ses_url)
+        console.log("success", ses_url)
         if (ses_url) {
           window.location.href = ses_url
           //navigate(ses_url, { replace: false })

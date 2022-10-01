@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Button from "../../components/ui/Button"
 import { image_tour_url } from "../../utils/constants"
 import { useUserContext } from "../../context/user_context"
-import PayButton from "../../components/ui/PayButton"
+// import PayButton from "../../components/ui/PayButton"
 
 const TourCta = ({ id, images }) => {
   const { user } = useUserContext()
@@ -31,11 +31,12 @@ const TourCta = ({ id, images }) => {
           <p className='cta__text'>Best experience for life.</p>
         </div>
         <div className='cta__button'>
-          {user ? (
-            <PayButton id={id}>Book it</PayButton>
+          {!user && <Button link={`/login`}>Login</Button>}
+          {/* {user ? (
+             <PayButton id={id}>Book it</PayButton>
           ) : (
             <Button link={`/login`}>Login</Button>
-          )}
+          )} */}
         </div>
       </div>
     </Wrapper>

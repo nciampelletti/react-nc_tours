@@ -31,7 +31,7 @@ const Tours = () => {
         {tours?.map((tour) => {
           const {
             _id,
-            imageCover,
+            imageThumb,
             name,
             difficulty,
             duration,
@@ -50,7 +50,7 @@ const Tours = () => {
             <Tour
               id={_id}
               key={_id}
-              image={imageCover}
+              image={imageThumb}
               name={name}
               duration={duration}
               difficulty={difficulty}
