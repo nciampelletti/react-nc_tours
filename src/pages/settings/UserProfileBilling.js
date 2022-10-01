@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import DemoSticker from "../../components/DemoSticker"
 
-const UserBilling = () => {
+const UserProfileBilling = () => {
   return (
     <Wrapper>
       <DemoSticker name='User Billing' />
@@ -10,6 +10,6 @@ const UserBilling = () => {
   )
 }
 
-export default UserBilling
+export default UserProfileBilling
 
 const Wrapper = styled.div``

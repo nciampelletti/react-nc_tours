@@ -6,12 +6,12 @@ import {
   Signup,
   UserProfileAccount,
   UserProfilePWDReset,
-  UserBilling,
   UserBookings,
   UserReviews,
   Login,
   PrivateRoute,
   CheckoutSuccess,
+  UserProfileBilling,
 } from "./pages"
 
 import { Footer, Header, SharedLayout } from "./components/layout"
@@ -41,7 +41,7 @@ function App() {
             <Route path='/passwordreset' element={<UserProfilePWDReset />} />
             <Route path='/bookings' element={<UserBookings />} />
             <Route path='/reviews' element={<UserReviews />} />
-            <Route path='/billing' element={<UserBilling />} />
+            <Route path='/billing' element={<UserProfileBilling />} />
             <Route path='/checkout-success' element={<CheckoutSuccess />} />
           </Route>
           <Route path='/*' element={<Error />} />

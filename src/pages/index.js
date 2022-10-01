@@ -5,19 +5,18 @@ import Signup from "./Auth/SignupPage"
 import Login from "./Auth/LoginPage"
 import PrivateRoute from "./Auth/PrivateRoute"
 
-import UserBilling from "./Settings/UserBilling"
 import UserBookings from "./Settings/UserBookings"
 import UserReviews from "./Settings/UserReviews"
 import CheckoutSuccess from "./Auth/CheckoutSuccessPage"
 import UserProfilePWDReset from "./Settings/UserProfilePWDReset"
 import UserProfileAccount from "./Settings/UserProfileAccount"
+import UserProfileBilling from "./Settings/UserProfileBilling"
 
 export {
   Home,
   Tour,
   Error,
   Signup,
-  UserBilling,
   UserBookings,
   UserReviews,
   Login,
@@ -25,4 +24,5 @@ export {
   CheckoutSuccess,
   UserProfilePWDReset,
   UserProfileAccount,
+  UserProfileBilling,
 }
