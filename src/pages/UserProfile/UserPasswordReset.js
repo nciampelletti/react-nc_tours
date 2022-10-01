@@ -33,7 +33,8 @@ const UserPasswordReset = () => {
       return
     }
 
-    passwordReset({ passwordCurrent, password, passwordConfirm })
+    toast.error("This is a DEMO version")
+    //passwordReset({ passwordCurrent, password, passwordConfirm })
   }
 
   return (

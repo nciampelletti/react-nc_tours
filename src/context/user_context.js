@@ -32,7 +32,8 @@ export const UserProvider = ({ children }) => {
       const response = await axios.post(
         // `${url}/login`,
         "https://ciampelletti-tours.herokuapp.com/api/v1/users/login",
-        { email, password }
+        { email, password },
+        { withCredentials: true }
       )
 
       dispatch({
@@ -59,41 +60,13 @@ export const UserProvider = ({ children }) => {
       formData.append("email", email)
       formData.append("name", name)
 
-      console.log(photo, email, name)
-
-      // const response = await axios({
-      //   method: "patch",
-      //   url: `https://ciampelletti-tours.herokuapp.com/api/v1/users/updateMe`,
-      //   data: formData,
-      //   headers: { "Content-Type": "multipart/form-data" },
-      //   withCredentials: true,
-      // })
-
-      const axiosClient = axios.create()
-      axiosClient.defaults.baseURL =
-        "https://ciampelletti-tours.herokuapp.com/api/v1"
-
-      axiosClient.defaults.headers = {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "multipart/form-data",
-      }
-
-      axiosClient.defaults.withCredentials = true
-      axiosClient.defaults.mode = "no-cors"
-
-      // const options = {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      // }
-
-      //return axiosClient.patch(`/${URL}`, payload).then(response => response);
-
-      const response = await axiosClient.patch(
-        // `${url}/login`,
-        "/users/updateMe",
-        formData
-      )
+      const response = await axios({
+        method: "patch",
+        url: `https://ciampelletti-tours.herokuapp.com/api/v1/users/updateMe`,
+        data: formData,
+        headers: { "Content-Type": "multipart/form-data" },
+        withCredentials: true,
+      })
 
       dispatch({
         type: ME_UPDATE_SUCCESS,

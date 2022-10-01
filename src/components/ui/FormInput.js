@@ -14,11 +14,12 @@ const FormInput = (props) => {
         type={type}
         name={name}
         label={label}
-        placeholder={placeholder}
+        //placeholder={placeholder}
         value={value}
         required={required}
         className='form__input'
         onChange={handleChange}
+        autocomplete='on'
       />
     </Wrapper>
   )

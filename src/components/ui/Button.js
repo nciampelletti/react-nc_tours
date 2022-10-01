@@ -2,9 +2,13 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 function Button(props) {
+  const linkClass = `${props.disabled && "disabled-link"} btn btn--blue`
+
+  console.log(linkClass)
+
   if (props.link) {
     return (
-      <Link to={props.link} className='btn btn--blue'>
+      <Link to={props.link} style={{ pointerEvents: "none" }}>
         {props.children}
       </Link>
     )
@@ -21,4 +25,8 @@ export default Button
 
 const Wrapper = styled.button`
   padding: 1rem 3rem;
+
+  .disabled-link {
+    pointer-events: none;
+  }
 `

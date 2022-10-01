@@ -38,7 +38,8 @@ const UserAccountDetails = () => {
       return
     }
 
-    updateMe(me)
+    toast.error("This is a DEMO version")
+    // updateMe(me)
   }
 
   return (
@@ -73,7 +74,7 @@ const UserAccountDetails = () => {
           </div>
 
           <div className='form__header_footer'>
-            <Button>Save Changes</Button>
+            <Button disabled={true}>Save Changes</Button>
           </div>
         </form>
       </div>
