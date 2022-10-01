@@ -9,6 +9,7 @@ import UserBilling from "./Settings/UserBilling"
 import UserBookings from "./Settings/UserBookings"
 import UserReviews from "./Settings/UserReviews"
 import CheckoutSuccess from "./Auth/CheckoutSuccessPage"
+import UserProfilePWDReset from "./Settings/UserProfilePWDReset"
 
 export {
   Home,
@@ -22,4 +23,5 @@ export {
   Login,
   PrivateRoute,
   CheckoutSuccess,
+  UserProfilePWDReset,
 }

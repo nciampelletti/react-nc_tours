@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import UserPasswordReset from "./UserPasswordReset"
 
-const PasswordReset = () => {
+const UserProfilePWDReset = () => {
   return (
     <Wrapper>
       <UserPasswordReset />
@@ -10,7 +10,7 @@ const PasswordReset = () => {
   )
 }
 
-export default PasswordReset
+export default UserProfilePWDReset
 
 const Wrapper = styled.div`
   margin: 2rem 2rem;

@@ -5,6 +5,7 @@ import {
   Error,
   Signup,
   UserProfile,
+  UserProfilePWDReset,
   UserBilling,
   UserBookings,
   UserReviews,
@@ -39,7 +40,7 @@ function App() {
             }
           >
             <Route path='/userprofile' element={<UserProfile />} />
-            <Route path='/passwordreset' element={<PasswordReset />} />
+            <Route path='/passwordreset' element={<UserProfilePWDReset />} />
             <Route path='/bookings' element={<UserBookings />} />
             <Route path='/reviews' element={<UserReviews />} />
             <Route path='/billing' element={<UserBilling />} />
