@@ -6,8 +6,8 @@ import {
   Signup,
   UserProfileAccount,
   UserProfilePWDReset,
-  UserBookings,
-  UserReviews,
+  UserProfileBooking,
+  UserProfileReviews,
   Login,
   PrivateRoute,
   CheckoutSuccess,
@@ -39,8 +39,8 @@ function App() {
           >
             <Route path='/userprofile' element={<UserProfileAccount />} />
             <Route path='/passwordreset' element={<UserProfilePWDReset />} />
-            <Route path='/bookings' element={<UserBookings />} />
-            <Route path='/reviews' element={<UserReviews />} />
+            <Route path='/bookings' element={<UserProfileBooking />} />
+            <Route path='/reviews' element={<UserProfileReviews />} />
             <Route path='/billing' element={<UserProfileBilling />} />
             <Route path='/checkout-success' element={<CheckoutSuccess />} />
           </Route>
