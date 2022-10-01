@@ -71,7 +71,7 @@ export const UserProvider = ({ children }) => {
 
       const axiosClient = axios.create()
       axiosClient.defaults.baseURL =
-        "https://ciampelletti-tours.herokuapp.com/api/v1/users/login"
+        "https://ciampelletti-tours.herokuapp.com/api/v1"
 
       axiosClient.defaults.headers = {
         "Content-Type": "multipart/form-data",
@@ -89,7 +89,7 @@ export const UserProvider = ({ children }) => {
 
       const response = await axiosClient.patch(
         // `${url}/login`,
-        "https://ciampelletti-tours.herokuapp.com/api/v1/users/login",
+        "/users/login",
         formData
       )
 
