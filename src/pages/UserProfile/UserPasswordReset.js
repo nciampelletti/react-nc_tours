@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useUserContext } from "../../context/user_context"
+// import { useUserContext } from "../../context/user_context"
 import styled from "styled-components"
 import { Button, FormInput } from "../../components/ui"
 import { toast } from "react-toastify"
@@ -12,7 +12,7 @@ const initialState = {
 }
 
 const UserPasswordReset = () => {
-  const { passwordReset } = useUserContext()
+  // const { passwordReset } = useUserContext()
   const [passwords, setPasswords] = useState(initialState)
 
   const handleChange = (e) => {
@@ -46,7 +46,6 @@ const UserPasswordReset = () => {
             type='password'
             name='passwordCurrent'
             label='Current password'
-            placeholder='••••••••'
             value={passwords.passwordCurrent}
             required
             handleChange={handleChange}
@@ -56,7 +55,6 @@ const UserPasswordReset = () => {
             type='password'
             name='password'
             label='New password'
-            placeholder='••••••••'
             value={passwords.password}
             required
             handleChange={handleChange}
@@ -66,7 +64,6 @@ const UserPasswordReset = () => {
             type='password'
             name='passwordConfirm'
             label='Confirm password'
-            placeholder='••••••••'
             value={passwords.passwordConfirm}
             required
             handleChange={handleChange}

@@ -10,7 +10,7 @@ import TextHeader from "../../components/layout/TextHeader"
 import { image_user_url } from "../../utils/constants"
 
 const UserAccountDetails = () => {
-  const { user, updateMe } = useUserContext()
+  const { user } = useUserContext()
   const [me, setMe] = useState(user)
   const { email, name } = me
 

@@ -2,8 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const FormInput = (props) => {
-  const { name, type, placeholder, value, required, handleChange, label } =
-    props
+  const { name, type, value, required, handleChange, label } = props
   return (
     <Wrapper>
       <label className='form__label' htmlFor={name}>
