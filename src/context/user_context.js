@@ -74,10 +74,12 @@ export const UserProvider = ({ children }) => {
         "https://ciampelletti-tours.herokuapp.com/api/v1"
 
       axiosClient.defaults.headers = {
+        "Access-Control-Allow-Origin": "*",
         "Content-Type": "multipart/form-data",
       }
 
       axiosClient.defaults.withCredentials = true
+      axiosClient.defaults.mode = "no-cors"
 
       // const options = {
       //   headers: {
