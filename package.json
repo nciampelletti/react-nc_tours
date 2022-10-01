@@ -1,6 +1,5 @@
 {
   "name": "tours_client",
-  "proxy": "https://ciampelletti-tours.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
