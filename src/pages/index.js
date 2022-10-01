@@ -6,11 +6,11 @@ import Login from "./Auth/LoginPage"
 import PrivateRoute from "./Auth/PrivateRoute"
 
 import CheckoutSuccess from "./Auth/CheckoutSuccessPage"
-import UserProfilePWDReset from "./Settings/UserProfilePWDReset"
-import UserProfileAccount from "./Settings/UserProfileAccount"
-import UserProfileBilling from "./Settings/UserProfileBilling"
-import UserProfileBooking from "./Settings/UserProfileBooking"
-import UserProfileReviews from "./Settings/UserProfileReviews"
+import UserProfilePWDReset from "./UserProfile/UserProfilePWDReset"
+import UserProfileAccount from "./UserProfile/UserProfileAccount"
+import UserProfileBilling from "./UserProfile/UserProfileBilling"
+import UserProfileBooking from "./UserProfile/UserProfileBooking"
+import UserProfileReviews from "./UserProfile/UserProfileReviews"
 
 export {
   Home,
