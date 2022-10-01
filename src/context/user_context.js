@@ -61,13 +61,37 @@ export const UserProvider = ({ children }) => {
 
       console.log(photo, email, name)
 
-      const response = await axios({
-        method: "PATCH",
-        url: `https://ciampelletti-tours.herokuapp.com/api/v1/users/updateMe`,
-        data: formData,
-        headers: { "Content-Type": "multipart/form-data" },
-        withCredentials: true,
-      })
+      // const response = await axios({
+      //   method: "patch",
+      //   url: `https://ciampelletti-tours.herokuapp.com/api/v1/users/updateMe`,
+      //   data: formData,
+      //   headers: { "Content-Type": "multipart/form-data" },
+      //   withCredentials: true,
+      // })
+
+      const axiosClient = axios.create()
+      axiosClient.defaults.baseURL =
+        "https://ciampelletti-tours.herokuapp.com/api/v1/users/login"
+
+      axiosClient.defaults.headers = {
+        "Content-Type": "multipart/form-data",
+      }
+
+      axiosClient.defaults.withCredentials = true
+
+      // const options = {
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      // }
+
+      //return axiosClient.patch(`/${URL}`, payload).then(response => response);
+
+      const response = await axiosClient.patch(
+        // `${url}/login`,
+        "https://ciampelletti-tours.herokuapp.com/api/v1/users/login",
+        formData
+      )
 
       dispatch({
         type: ME_UPDATE_SUCCESS,
