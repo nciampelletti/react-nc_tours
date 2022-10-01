@@ -28,14 +28,16 @@ export const ToursProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    fecthTours(`/api/v1/tours`)
+    fecthTours(`https://ciampelletti-tours.herokuapp.com/api/v1/tours`)
   }, [])
 
   const fecthTours = async (url) => {
     dispatch({ type: GET_TOURS_BEGIN })
 
     try {
-      const response = await axios.get("/api/v1/tours")
+      const response = await axios.get(
+        "https://ciampelletti-tours.herokuapp.com/api/v1/tours"
+      )
 
       const tours = response.data.data
 

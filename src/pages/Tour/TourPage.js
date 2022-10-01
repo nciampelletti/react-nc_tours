@@ -45,8 +45,8 @@ const TourPage = () => {
   useEffect(() => {
     //fetchSingleTourWithReviews(`${url}/${id}`, `${url}/${id}/reviews`)
     fetchSingleTourWithReviews(
-      `/api/v1/tours/${id}`,
-      `/api/v1/tours/${id}/reviews`
+      `https://ciampelletti-tours.herokuapp.com/api/v1/tours/${id}`,
+      `https://ciampelletti-tours.herokuapp.com/api/v1/tours/${id}/reviews`
     )
     // eslint-disable-next-line
   }, [id])

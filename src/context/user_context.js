@@ -31,7 +31,7 @@ export const UserProvider = ({ children }) => {
     try {
       const response = await axios.post(
         // `${url}/login`,
-        "/api/v1/users/login",
+        "https://ciampelletti-tours.herokuapp.com/api/v1/users/login",
         { email, password },
         { withCredentials: true }
       )
@@ -64,7 +64,7 @@ export const UserProvider = ({ children }) => {
 
       const response = await axios({
         method: "patch",
-        url: `/api/v1/users/updateMe`,
+        url: `https://ciampelletti-tours.herokuapp.com/api/v1/users/updateMe`,
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
@@ -93,7 +93,7 @@ export const UserProvider = ({ children }) => {
   }) => {
     try {
       const response = await axios.patch(
-        `/api/v1/users/updateMyPassword`,
+        `https://ciampelletti-tours.herokuapp.com/api/v1/users/updateMyPassword`,
         { passwordCurrent, password, passwordConfirm },
         { withCredentials: true }
       )
@@ -115,12 +115,15 @@ export const UserProvider = ({ children }) => {
 
   const signup = async ({ name, email, password, passwordConfirm }) => {
     try {
-      const response = await axios.post(`/api/v1/users/signup`, {
-        name,
-        email,
-        password,
-        passwordConfirm,
-      })
+      const response = await axios.post(
+        `https://ciampelletti-tours.herokuapp.com/api/v1/users/signup`,
+        {
+          name,
+          email,
+          password,
+          passwordConfirm,
+        }
+      )
 
       dispatch({
         type: SIGNUP_USER_SUCCESS,
