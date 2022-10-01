@@ -62,7 +62,7 @@ export const UserProvider = ({ children }) => {
       console.log(photo, email, name)
 
       const response = await axios({
-        method: "patch",
+        method: "PATCH",
         url: `https://ciampelletti-tours.herokuapp.com/api/v1/users/updateMe`,
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },
